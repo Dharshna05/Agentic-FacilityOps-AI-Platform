@@ -1,0 +1,407 @@
+{
+  "model": "gradient_boosting",
+  "r2": 0.747,
+  "unit": "cycles (operating days)",
+  "points": [
+    {
+      "actual": 112.0,
+      "predicted": 123.3
+    },
+    {
+      "actual": 98.0,
+      "predicted": 118.6
+    },
+    {
+      "actual": 69.0,
+      "predicted": 58.4
+    },
+    {
+      "actual": 82.0,
+      "predicted": 73.9
+    },
+    {
+      "actual": 91.0,
+      "predicted": 93.4
+    },
+    {
+      "actual": 93.0,
+      "predicted": 83.8
+    },
+    {
+      "actual": 91.0,
+      "predicted": 92.4
+    },
+    {
+      "actual": 95.0,
+      "predicted": 66.5
+    },
+    {
+      "actual": 111.0,
+      "predicted": 118.1
+    },
+    {
+      "actual": 96.0,
+      "predicted": 102.3
+    },
+    {
+      "actual": 97.0,
+      "predicted": 104.1
+    },
+    {
+      "actual": 124.0,
+      "predicted": 101.0
+    },
+    {
+      "actual": 95.0,
+      "predicted": 92.8
+    },
+    {
+      "actual": 107.0,
+      "predicted": 122.2
+    },
+    {
+      "actual": 83.0,
+      "predicted": 111.0
+    },
+    {
+      "actual": 84.0,
+      "predicted": 100.1
+    },
+    {
+      "actual": 50.0,
+      "predicted": 72.6
+    },
+    {
+      "actual": 28.0,
+      "predicted": 57.9
+    },
+    {
+      "actual": 87.0,
+      "predicted": 83.1
+    },
+    {
+      "actual": 16.0,
+      "predicted": 11.9
+    },
+    {
+      "actual": 57.0,
+      "predicted": 89.4
+    },
+    {
+      "actual": 111.0,
+      "predicted": 121.5
+    },
+    {
+      "actual": 113.0,
+      "predicted": 114.0
+    },
+    {
+      "actual": 20.0,
+      "predicted": 42.6
+    },
+    {
+      "actual": 125.0,
+      "predicted": 120.9
+    },
+    {
+      "actual": 119.0,
+      "predicted": 112.4
+    },
+    {
+      "actual": 66.0,
+      "predicted": 90.0
+    },
+    {
+      "actual": 97.0,
+      "predicted": 75.8
+    },
+    {
+      "actual": 90.0,
+      "predicted": 105.0
+    },
+    {
+      "actual": 115.0,
+      "predicted": 64.9
+    },
+    {
+      "actual": 8.0,
+      "predicted": 13.1
+    },
+    {
+      "actual": 48.0,
+      "predicted": 76.4
+    },
+    {
+      "actual": 106.0,
+      "predicted": 120.1
+    },
+    {
+      "actual": 7.0,
+      "predicted": 7.9
+    },
+    {
+      "actual": 11.0,
+      "predicted": 4.1
+    },
+    {
+      "actual": 19.0,
+      "predicted": 18.4
+    },
+    {
+      "actual": 21.0,
+      "predicted": 45.2
+    },
+    {
+      "actual": 50.0,
+      "predicted": 47.5
+    },
+    {
+      "actual": 125.0,
+      "predicted": 125.4
+    },
+    {
+      "actual": 28.0,
+      "predicted": 25.6
+    },
+    {
+      "actual": 18.0,
+      "predicted": 51.4
+    },
+    {
+      "actual": 10.0,
+      "predicted": 20.4
+    },
+    {
+      "actual": 59.0,
+      "predicted": 54.5
+    },
+    {
+      "actual": 109.0,
+      "predicted": 115.6
+    },
+    {
+      "actual": 114.0,
+      "predicted": 53.6
+    },
+    {
+      "actual": 47.0,
+      "predicted": 51.1
+    },
+    {
+      "actual": 125.0,
+      "predicted": 109.9
+    },
+    {
+      "actual": 92.0,
+      "predicted": 105.7
+    },
+    {
+      "actual": 21.0,
+      "predicted": 23.6
+    },
+    {
+      "actual": 79.0,
+      "predicted": 109.9
+    },
+    {
+      "actual": 114.0,
+      "predicted": 69.7
+    },
+    {
+      "actual": 29.0,
+      "predicted": 66.6
+    },
+    {
+      "actual": 26.0,
+      "predicted": 40.2
+    },
+    {
+      "actual": 97.0,
+      "predicted": 108.5
+    },
+    {
+      "actual": 125.0,
+      "predicted": 96.0
+    },
+    {
+      "actual": 15.0,
+      "predicted": 12.3
+    },
+    {
+      "actual": 103.0,
+      "predicted": 69.9
+    },
+    {
+      "actual": 37.0,
+      "predicted": 38.3
+    },
+    {
+      "actual": 114.0,
+      "predicted": 112.2
+    },
+    {
+      "actual": 100.0,
+      "predicted": 82.4
+    },
+    {
+      "actual": 21.0,
+      "predicted": 35.6
+    },
+    {
+      "actual": 54.0,
+      "predicted": 84.0
+    },
+    {
+      "actual": 72.0,
+      "predicted": 46.0
+    },
+    {
+      "actual": 28.0,
+      "predicted": 39.4
+    },
+    {
+      "actual": 125.0,
+      "predicted": 118.9
+    },
+    {
+      "actual": 14.0,
+      "predicted": 21.5
+    },
+    {
+      "actual": 77.0,
+      "predicted": 114.3
+    },
+    {
+      "actual": 8.0,
+      "predicted": 11.5
+    },
+    {
+      "actual": 121.0,
+      "predicted": 118.6
+    },
+    {
+      "actual": 94.0,
+      "predicted": 71.2
+    },
+    {
+      "actual": 118.0,
+      "predicted": 115.4
+    },
+    {
+      "actual": 50.0,
+      "predicted": 80.1
+    },
+    {
+      "actual": 125.0,
+      "predicted": 101.1
+    },
+    {
+      "actual": 125.0,
+      "predicted": 67.6
+    },
+    {
+      "actual": 113.0,
+      "predicted": 103.5
+    },
+    {
+      "actual": 10.0,
+      "predicted": 9.4
+    },
+    {
+      "actual": 34.0,
+      "predicted": 46.3
+    },
+    {
+      "actual": 107.0,
+      "predicted": 120.1
+    },
+    {
+      "actual": 63.0,
+      "predicted": 87.6
+    },
+    {
+      "actual": 90.0,
+      "predicted": 76.1
+    },
+    {
+      "actual": 8.0,
+      "predicted": 7.2
+    },
+    {
+      "actual": 9.0,
+      "predicted": 4.0
+    },
+    {
+      "actual": 125.0,
+      "predicted": 109.7
+    },
+    {
+      "actual": 58.0,
+      "predicted": 53.7
+    },
+    {
+      "actual": 118.0,
+      "predicted": 120.9
+    },
+    {
+      "actual": 89.0,
+      "predicted": 84.4
+    },
+    {
+      "actual": 116.0,
+      "predicted": 119.4
+    },
+    {
+      "actual": 115.0,
+      "predicted": 118.4
+    },
+    {
+      "actual": 125.0,
+      "predicted": 79.2
+    },
+    {
+      "actual": 28.0,
+      "predicted": 26.6
+    },
+    {
+      "actual": 38.0,
+      "predicted": 19.6
+    },
+    {
+      "actual": 20.0,
+      "predicted": 18.4
+    },
+    {
+      "actual": 85.0,
+      "predicted": 36.1
+    },
+    {
+      "actual": 55.0,
+      "predicted": 48.7
+    },
+    {
+      "actual": 125.0,
+      "predicted": 101.9
+    },
+    {
+      "actual": 125.0,
+      "predicted": 115.9
+    },
+    {
+      "actual": 82.0,
+      "predicted": 91.8
+    },
+    {
+      "actual": 59.0,
+      "predicted": 60.6
+    },
+    {
+      "actual": 117.0,
+      "predicted": 120.2
+    },
+    {
+      "actual": 20.0,
+      "predicted": 37.3
+    }
+  ]
+}

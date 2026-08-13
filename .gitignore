@@ -1,0 +1,33 @@
+# --- Python / Backend ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+*.db
+*.sqlite3
+
+# --- Node / Frontend ---
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+
+# --- Env / secrets ---
+.env
+.env.local
+.env.*.local
+
+# --- Editors / OS ---
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+*.log
+npm-debug.log*
+
+# --- Misc build artifacts ---
+*.tsbuildinfo
+coverage/

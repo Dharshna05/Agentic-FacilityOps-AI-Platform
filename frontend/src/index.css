@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-paper dark:bg-graphite text-ink dark:text-slate-200 font-body transition-colors duration-200;
+}
+
+.font-display {
+  letter-spacing: -0.01em;
+}
+
+.font-mono {
+  font-feature-settings: "tnum" 1, "zero" 1;
+}

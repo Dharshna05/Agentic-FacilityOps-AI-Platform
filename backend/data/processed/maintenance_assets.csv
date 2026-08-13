@@ -1,0 +1,101 @@
+asset_id,name,asset_type,location,building_id
+AST-001,HVAC-001,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-002,Air-002,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-003,Water-003,Water Pump,Basement Utility,BLD-HQ-01
+AST-004,Air-004,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-005,Cooling-005,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-006,Boiler-006,Boiler,Basement Utility,BLD-HQ-01
+AST-007,Elevator-007,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-008,Backup-008,Backup Generator,Generator Yard,BLD-HQ-01
+AST-009,HVAC-009,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-010,Air-010,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-011,Water-011,Water Pump,Basement Utility,BLD-HQ-01
+AST-012,Air-012,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-013,Cooling-013,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-014,Boiler-014,Boiler,Basement Utility,BLD-HQ-01
+AST-015,Elevator-015,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-016,Backup-016,Backup Generator,Generator Yard,BLD-HQ-01
+AST-017,HVAC-017,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-018,Air-018,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-019,Water-019,Water Pump,Basement Utility,BLD-HQ-01
+AST-020,Air-020,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-021,Cooling-021,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-022,Boiler-022,Boiler,Basement Utility,BLD-HQ-01
+AST-023,Elevator-023,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-024,Backup-024,Backup Generator,Generator Yard,BLD-HQ-01
+AST-025,HVAC-025,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-026,Air-026,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-027,Water-027,Water Pump,Basement Utility,BLD-HQ-01
+AST-028,Air-028,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-029,Cooling-029,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-030,Boiler-030,Boiler,Basement Utility,BLD-HQ-01
+AST-031,Elevator-031,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-032,Backup-032,Backup Generator,Generator Yard,BLD-HQ-01
+AST-033,HVAC-033,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-034,Air-034,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-035,Water-035,Water Pump,Basement Utility,BLD-HQ-01
+AST-036,Air-036,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-037,Cooling-037,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-038,Boiler-038,Boiler,Basement Utility,BLD-HQ-01
+AST-039,Elevator-039,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-040,Backup-040,Backup Generator,Generator Yard,BLD-HQ-01
+AST-041,HVAC-041,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-042,Air-042,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-043,Water-043,Water Pump,Basement Utility,BLD-HQ-01
+AST-044,Air-044,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-045,Cooling-045,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-046,Boiler-046,Boiler,Basement Utility,BLD-HQ-01
+AST-047,Elevator-047,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-048,Backup-048,Backup Generator,Generator Yard,BLD-HQ-01
+AST-049,HVAC-049,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-050,Air-050,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-051,Water-051,Water Pump,Basement Utility,BLD-HQ-01
+AST-052,Air-052,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-053,Cooling-053,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-054,Boiler-054,Boiler,Basement Utility,BLD-HQ-01
+AST-055,Elevator-055,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-056,Backup-056,Backup Generator,Generator Yard,BLD-HQ-01
+AST-057,HVAC-057,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-058,Air-058,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-059,Water-059,Water Pump,Basement Utility,BLD-HQ-01
+AST-060,Air-060,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-061,Cooling-061,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-062,Boiler-062,Boiler,Basement Utility,BLD-HQ-01
+AST-063,Elevator-063,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-064,Backup-064,Backup Generator,Generator Yard,BLD-HQ-01
+AST-065,HVAC-065,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-066,Air-066,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-067,Water-067,Water Pump,Basement Utility,BLD-HQ-01
+AST-068,Air-068,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-069,Cooling-069,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-070,Boiler-070,Boiler,Basement Utility,BLD-HQ-01
+AST-071,Elevator-071,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-072,Backup-072,Backup Generator,Generator Yard,BLD-HQ-01
+AST-073,HVAC-073,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-074,Air-074,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-075,Water-075,Water Pump,Basement Utility,BLD-HQ-01
+AST-076,Air-076,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-077,Cooling-077,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-078,Boiler-078,Boiler,Basement Utility,BLD-HQ-01
+AST-079,Elevator-079,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-080,Backup-080,Backup Generator,Generator Yard,BLD-HQ-01
+AST-081,HVAC-081,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-082,Air-082,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-083,Water-083,Water Pump,Basement Utility,BLD-HQ-01
+AST-084,Air-084,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-085,Cooling-085,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-086,Boiler-086,Boiler,Basement Utility,BLD-HQ-01
+AST-087,Elevator-087,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-088,Backup-088,Backup Generator,Generator Yard,BLD-HQ-01
+AST-089,HVAC-089,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-090,Air-090,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-091,Water-091,Water Pump,Basement Utility,BLD-HQ-01
+AST-092,Air-092,Air Compressor,Mechanical Room B,BLD-HQ-01
+AST-093,Cooling-093,Cooling Tower,Roof Plant,BLD-HQ-01
+AST-094,Boiler-094,Boiler,Basement Utility,BLD-HQ-01
+AST-095,Elevator-095,Elevator Motor,Elevator Machine Room,BLD-HQ-01
+AST-096,Backup-096,Backup Generator,Generator Yard,BLD-HQ-01
+AST-097,HVAC-097,HVAC Chiller,Mechanical Room A,BLD-HQ-01
+AST-098,Air-098,Air Handling Unit,Roof Plant,BLD-HQ-01
+AST-099,Water-099,Water Pump,Basement Utility,BLD-HQ-01
+AST-100,Air-100,Air Compressor,Mechanical Room B,BLD-HQ-01

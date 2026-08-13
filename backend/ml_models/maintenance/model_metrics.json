@@ -1,0 +1,42 @@
+{
+  "rul_clip_cycles": 125,
+  "naive_baseline": {
+    "strategy": "predict training-set mean clipped RUL for every asset",
+    "mae_cycles": 34.83
+  },
+  "best_model": "gradient_boosting",
+  "improvement_over_naive_pct": 57.5,
+  "all_models": {
+    "linear_regression": {
+      "held_out_test_mae_cycles": 17.79,
+      "held_out_test_r2": 0.691
+    },
+    "random_forest": {
+      "held_out_test_mae_cycles": 15.17,
+      "held_out_test_r2": 0.737
+    },
+    "gradient_boosting": {
+      "held_out_test_mae_cycles": 14.81,
+      "held_out_test_r2": 0.747
+    }
+  },
+  "feature_importances_best_model": {
+    "vibration_index_roll_mean5": 0.5007,
+    "efficiency_ratio_roll_mean5": 0.2887,
+    "cycle": 0.1615,
+    "temp_stage3_c": 0.028,
+    "temp_stage2_c": 0.005,
+    "temp_stage1_c": 0.0049,
+    "bleed_load": 0.0043,
+    "vibration_index": 0.0019,
+    "pressure_kpa": 0.0015,
+    "flow_rate": 0.0013,
+    "vibration_index_roll_std5": 0.0009,
+    "efficiency_ratio": 0.0007,
+    "efficiency_ratio_roll_std5": 0.0007
+  },
+  "n_train_rows": 20631,
+  "n_train_engines": 100,
+  "n_test_engines_held_out": 100,
+  "note": "Held-out test set is NASA's official test_FD001 + RUL_FD001 answer key \u2014 engines never seen during training, each truncated mid-life. Reported as-is."
+}

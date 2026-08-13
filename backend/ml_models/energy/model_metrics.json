@@ -1,0 +1,143 @@
+{
+  "features": [
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "month",
+    "outdoor_temp_c",
+    "occupancy_count",
+    "kwh_now",
+    "kwh_rolling_mean_4h",
+    "kwh_rolling_std_4h",
+    "kwh_same_hour_yesterday"
+  ],
+  "horizons": {
+    "1h": {
+      "horizon": "1h",
+      "horizon_steps": 4,
+      "best_model": "random_forest",
+      "all_models": {
+        "linear_regression": {
+          "held_out_test_mae_kwh": 6.52,
+          "held_out_test_mape_pct": 2.22,
+          "held_out_test_r2": 0.9882,
+          "cv_mae_kwh_mean": 5.99,
+          "cv_mae_kwh_std": 0.87
+        },
+        "random_forest": {
+          "held_out_test_mae_kwh": 4.6,
+          "held_out_test_mape_pct": 1.49,
+          "held_out_test_r2": 0.9912,
+          "cv_mae_kwh_mean": 4.96,
+          "cv_mae_kwh_std": 1.14
+        },
+        "gradient_boosting": {
+          "held_out_test_mae_kwh": 4.76,
+          "held_out_test_mape_pct": 1.53,
+          "held_out_test_r2": 0.9906,
+          "cv_mae_kwh_mean": 4.72,
+          "cv_mae_kwh_std": 0.63
+        }
+      },
+      "naive_flat_mae_kwh": 13.16,
+      "naive_daily_mae_kwh": 34.28,
+      "improvement_over_best_naive_pct": 65.1,
+      "train_rows": 29699,
+      "test_rows": 5241,
+      "feature_importance": {
+        "kwh_now": 0.9596,
+        "hour": 0.0204,
+        "kwh_rolling_mean_4h": 0.0127,
+        "kwh_rolling_std_4h": 0.0038,
+        "outdoor_temp_c": 0.0014,
+        "day_of_week": 0.0006,
+        "month": 0.0006,
+        "kwh_same_hour_yesterday": 0.0004,
+        "occupancy_count": 0.0004,
+        "is_weekend": 0.0
+      },
+      "model_file": "consumption_forecast_model_1h.pkl"
+    },
+    "6h": {
+      "horizon": "6h",
+      "horizon_steps": 24,
+      "best_model": "random_forest",
+      "all_models": {
+        "linear_regression": {
+          "held_out_test_mae_kwh": 46.61,
+          "held_out_test_mape_pct": 15.21,
+          "held_out_test_r2": 0.3699,
+          "cv_mae_kwh_mean": 37.93,
+          "cv_mae_kwh_std": 9.21
+        },
+        "random_forest": {
+          "held_out_test_mae_kwh": 23.21,
+          "held_out_test_mape_pct": 7.23,
+          "held_out_test_r2": 0.7917,
+          "cv_mae_kwh_mean": 23.11,
+          "cv_mae_kwh_std": 6.34
+        },
+        "gradient_boosting": {
+          "held_out_test_mae_kwh": 25.07,
+          "held_out_test_mape_pct": 7.71,
+          "held_out_test_r2": 0.7633,
+          "cv_mae_kwh_mean": 20.8,
+          "cv_mae_kwh_std": 4.14
+        }
+      },
+      "naive_flat_mae_kwh": 70.0,
+      "naive_daily_mae_kwh": 76.97,
+      "improvement_over_best_naive_pct": 66.8,
+      "train_rows": 29682,
+      "test_rows": 5238,
+      "feature_importance": {
+        "kwh_now": 0.3443,
+        "hour": 0.3177,
+        "occupancy_count": 0.1182,
+        "outdoor_temp_c": 0.0608,
+        "month": 0.051,
+        "kwh_rolling_mean_4h": 0.0495,
+        "kwh_rolling_std_4h": 0.0304,
+        "day_of_week": 0.0214,
+        "kwh_same_hour_yesterday": 0.0061,
+        "is_weekend": 0.0006
+      },
+      "model_file": "consumption_forecast_model_6h.pkl"
+    },
+    "24h": {
+      "horizon": "24h",
+      "horizon_steps": 96,
+      "best_model": "linear_regression",
+      "all_models": {
+        "linear_regression": {
+          "held_out_test_mae_kwh": 29.64,
+          "held_out_test_mape_pct": 9.63,
+          "held_out_test_r2": 0.7011,
+          "cv_mae_kwh_mean": 21.28,
+          "cv_mae_kwh_std": 4.89
+        },
+        "random_forest": {
+          "held_out_test_mae_kwh": 41.42,
+          "held_out_test_mape_pct": 12.78,
+          "held_out_test_r2": 0.3887,
+          "cv_mae_kwh_mean": 18.66,
+          "cv_mae_kwh_std": 3.95
+        },
+        "gradient_boosting": {
+          "held_out_test_mae_kwh": 32.82,
+          "held_out_test_mape_pct": 10.16,
+          "held_out_test_r2": 0.6215,
+          "cv_mae_kwh_mean": 18.83,
+          "cv_mae_kwh_std": 4.72
+        }
+      },
+      "naive_flat_mae_kwh": 31.25,
+      "naive_daily_mae_kwh": 45.86,
+      "improvement_over_best_naive_pct": 5.2,
+      "train_rows": 29620,
+      "test_rows": 5228,
+      "feature_importance": null,
+      "model_file": "consumption_forecast_model_24h.pkl"
+    }
+  }
+}
