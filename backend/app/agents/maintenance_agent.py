@@ -1,10 +1,9 @@
 """
 Maintenance Agent (Milestone 2).
 
-Follows the exact template established by EnergyAgent (see
-ARCHITECTURE.md): __init__ pulls the data it needs, analyze() runs
-domain-specific analytics (here: per-asset ML health scoring + fleet
-rollups), recommend() turns that into ranked, actionable alerts (rule-based
+Follows the exact template established by EnergyAgent: __init__ pulls the data it
+needs, analyze() runs domain-specific analytics (here: per-asset ML health scoring +
+fleet rollups), recommend() turns that into ranked, actionable alerts (rule-based
 AND ML-driven), and run() is the single entrypoint the API/other agents call.
 """
 from sqlalchemy.orm import Session

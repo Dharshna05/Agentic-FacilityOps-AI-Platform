@@ -1,0 +1,36 @@
+{
+  "model": "random_forest_supervised_reference",
+  "cv_folds": 5,
+  "precision": 0.5519,
+  "recall": 0.9778,
+  "f1": 0.7056,
+  "n_events": 88475,
+  "n_true_anomalies": 1713,
+  "n_flagged": 3035,
+  "detection_rate_by_anomaly_type": {
+    "unauthorized_restricted_zone_access": {
+      "count": 1240,
+      "detection_rate": 1.0
+    },
+    "repeated_denial": {
+      "count": 417,
+      "detection_rate": 0.998
+    },
+    "after_hours_access": {
+      "count": 56,
+      "detection_rate": 0.339
+    }
+  },
+  "feature_cols": [
+    "hour_of_day",
+    "is_business_hours",
+    "is_weekend",
+    "risk_level_enc",
+    "access_denied",
+    "recent_denials_by_employee",
+    "is_novel_access_point_for_employee",
+    "recent_denials_5min_by_employee",
+    "novel_high_risk_access"
+  ],
+  "note": "NOT a live-deployed model \u2014 trained WITH the is_anomaly label via 5-fold cross-validation (out-of-fold predictions, so no row is scored by a model that saw its own label). A real deployment has no labeled incident history to supervise on, which is exactly why the production detector is unsupervised. This exists purely as an honest reference point: it shows how much of the F1 gap between the unsupervised detector and 'perfect' is inherent to the features available versus left on the table by the unsupervised constraint specifically."
+}

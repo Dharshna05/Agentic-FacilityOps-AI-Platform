@@ -1,0 +1,9 @@
+# Training-only dependencies — matplotlib is only used to generate static
+# diagnostic plots when re-running the training script; NOT required for
+# the live API (tensorflow-cpu IS now a live dependency — see
+# requirements.txt — because /occupancy/cnn/live-inference genuinely loads
+# and runs the trained model at request time, not just its metrics).
+#
+#   pip install -r requirements-training.txt --break-system-packages
+#
+matplotlib==3.10.8

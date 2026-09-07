@@ -1,0 +1,76 @@
+{
+  "model_type": "Conv1D CNN (2 conv blocks + global average pooling)",
+  "task": "binary occupancy classification from a 10-minute sliding window of sensor readings (trend-based), as a complementary model to the existing single-timestamp Logistic Regression classifier",
+  "window_size_minutes": 10,
+  "held_out_accuracy": 0.9852,
+  "precision": 0.9678,
+  "recall": 0.971,
+  "f1": 0.9694,
+  "confusion_matrix": {
+    "labels": [
+      "Empty",
+      "Occupied"
+    ],
+    "matrix": [
+      [
+        9299,
+        97
+      ],
+      [
+        87,
+        2916
+      ]
+    ]
+  },
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_accuracy": 0.9522,
+      "val_accuracy": 0.9852,
+      "train_loss": 0.2434,
+      "val_loss": 0.0848
+    },
+    {
+      "epoch": 2,
+      "train_accuracy": 0.9828,
+      "val_accuracy": 0.9715,
+      "train_loss": 0.0649,
+      "val_loss": 0.091
+    },
+    {
+      "epoch": 3,
+      "train_accuracy": 0.9848,
+      "val_accuracy": 0.9644,
+      "train_loss": 0.0591,
+      "val_loss": 0.1026
+    },
+    {
+      "epoch": 4,
+      "train_accuracy": 0.9848,
+      "val_accuracy": 0.9535,
+      "train_loss": 0.057,
+      "val_loss": 0.1119
+    },
+    {
+      "epoch": 5,
+      "train_accuracy": 0.9845,
+      "val_accuracy": 0.9389,
+      "train_loss": 0.0525,
+      "val_loss": 0.1266
+    }
+  ],
+  "n_train_windows": 8134,
+  "n_test_windows": 12399,
+  "epochs_trained": 5,
+  "early_stopping": "monitored held-out val_accuracy, patience=4, restored best-epoch weights (this run overfit past its best epoch, same as any real training run can \u2014 early stopping is reported here, not hidden)",
+  "final_train_accuracy": 0.9845,
+  "final_val_accuracy": 0.9389,
+  "comparison_note": "The existing point-in-time Logistic Regression (98.34% held-out accuracy) remains the primary/production occupancy model in this project \u2014 this CNN is a genuine second model trained and evaluated on the same real dataset and the same held-out split, reported honestly rather than replacing the baseline. Its task is different (10-minute trend window vs. single timestamp), so the two numbers are not directly comparable as a simple 'better/worse' \u2014 they answer slightly different questions about the same real sensor data.",
+  "feature_cols": [
+    "Temperature",
+    "Humidity",
+    "Light",
+    "CO2",
+    "HumidityRatio"
+  ]
+}

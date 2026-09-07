@@ -1,0 +1,9 @@
+zone_id,name,zone_type,capacity
+ZN-01,Open Office - Floor 1,workspace,80
+ZN-02,Open Office - Floor 2,workspace,80
+ZN-03,Meeting Room A,meeting_room,12
+ZN-04,Meeting Room B,meeting_room,8
+ZN-05,Cafeteria,common_area,60
+ZN-06,Lobby,common_area,30
+ZN-07,Server Room,restricted,4
+ZN-08,Executive Wing,workspace,15

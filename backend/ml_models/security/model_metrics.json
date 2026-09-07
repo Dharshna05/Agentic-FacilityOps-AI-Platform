@@ -1,0 +1,58 @@
+{
+  "model": "isolation_forest",
+  "contamination_param": 0.02,
+  "precision": 0.7141,
+  "recall": 0.7379,
+  "f1": 0.7258,
+  "n_events": 88475,
+  "n_true_anomalies": 1713,
+  "n_flagged": 1770,
+  "detection_rate_by_anomaly_type": {
+    "unauthorized_restricted_zone_access": {
+      "count": 1240,
+      "detection_rate": 0.745
+    },
+    "repeated_denial": {
+      "count": 417,
+      "detection_rate": 0.777
+    },
+    "after_hours_access": {
+      "count": 56,
+      "detection_rate": 0.286
+    }
+  },
+  "feature_cols": [
+    "hour_of_day",
+    "is_business_hours",
+    "is_weekend",
+    "risk_level_enc",
+    "access_denied",
+    "recent_denials_by_employee",
+    "is_novel_access_point_for_employee",
+    "recent_denials_5min_by_employee",
+    "novel_high_risk_access"
+  ],
+  "note": "Isolation Forest trained WITHOUT the is_anomaly label \u2014 fully unsupervised. Precision/recall computed afterward against injected synthetic ground truth (see data/build_security_dataset.py). This validates the detection METHOD against known patterns; it has not been validated against real security incidents. Trade-off worth stating plainly: this configuration favors precision over recall on the repeated_denial pattern specifically (fewer false alarms fleet-wide, at the cost of missing more repeated-denial bursts) \u2014 see detection_rate_by_anomaly_type.",
+  "training_distribution": {
+    "hour_of_day": {
+      "mean": 13.085,
+      "std": 3.796
+    },
+    "is_business_hours": {
+      "mean": 0.853,
+      "std": 0.354
+    },
+    "is_weekend": {
+      "mean": 0.051,
+      "std": 0.219
+    },
+    "access_denied": {
+      "mean": 0.029,
+      "std": 0.169
+    },
+    "recent_denials_by_employee": {
+      "mean": 0.291,
+      "std": 0.629
+    }
+  }
+}

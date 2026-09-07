@@ -6,9 +6,7 @@ export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
     const stored = localStorage.getItem('facilityops-theme')
     if (stored) return stored
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark'
-    // defaults to dark regardless of system pref — matches the platform's
-    // established control-room brand; light mode is opt-in via the toggle.
+    return 'light'
   })
 
   useEffect(() => {

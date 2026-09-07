@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent  # backend/
 load_dotenv(BASE_DIR / ".env")
 
 class Settings:
-    PROJECT_NAME: str = "Agentic FacilityOps AI Platform"
+    PROJECT_NAME: str = "Infosys_Agentic AI for Smart Facility Operations and Optimization"
     API_V1_PREFIX: str = "/api"
 
     DATABASE_URL: str = os.getenv(
@@ -41,6 +41,21 @@ class Settings:
     # provider — fast, generous free tier) needs GROQ_API_KEY. "gemini" is
     # also supported and needs GEMINI_API_KEY.
     AI_PROVIDER: str = os.getenv("AI_PROVIDER", "mock")
+
+    # --- Auth (Milestone: login/admin protection) ---
+    # Secret used to sign JWTs. Falls back to a fixed dev-only value so the
+    # app still runs out-of-the-box, but this MUST be overridden in .env for
+    # anything beyond local dev — anyone with this default could forge a
+    # valid token otherwise.
+    JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "dev-only-insecure-secret-change-me")
+    JWT_ALGORITHM: str = "HS256"
+    JWT_EXPIRE_MINUTES: int = int(os.getenv("JWT_EXPIRE_MINUTES", "120"))
+
+    # Seeded on first boot (see main.py's lifespan) if no users exist yet —
+    # this is a single-admin demo setup, not a public-registration system.
+    # Change ADMIN_PASSWORD in .env before showing this to anyone else.
+    ADMIN_USERNAME: str = os.getenv("ADMIN_USERNAME", "admin")
+    ADMIN_PASSWORD: str = os.getenv("ADMIN_PASSWORD", "facilityops123")
 
 
 settings = Settings()

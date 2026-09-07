@@ -1,1819 +1,1819 @@
 {
   "1h": {
-    "model": "random_forest",
-    "r2": 0.9912,
+    "model": "ensemble_blend",
+    "r2": 0.9925,
     "points": [
       {
-        "actual": 265.1,
-        "predicted": 257.72
+        "actual": 214.64,
+        "predicted": 208.4
       },
       {
-        "actual": 315.09,
-        "predicted": 321.45
+        "actual": 308.7,
+        "predicted": 311.13
       },
       {
-        "actual": 189.65,
-        "predicted": 190.4
+        "actual": 212.02,
+        "predicted": 212.32
       },
       {
-        "actual": 292.72,
-        "predicted": 292.0
+        "actual": 224.08,
+        "predicted": 223.93
       },
       {
-        "actual": 278.17,
-        "predicted": 265.64
+        "actual": 242.59,
+        "predicted": 248.81
       },
       {
-        "actual": 183.53,
-        "predicted": 187.09
+        "actual": 167.95,
+        "predicted": 167.41
       },
       {
-        "actual": 243.05,
-        "predicted": 245.3
+        "actual": 247.89,
+        "predicted": 247.19
       },
       {
-        "actual": 193.06,
-        "predicted": 194.91
+        "actual": 248.91,
+        "predicted": 246.45
       },
       {
-        "actual": 237.5,
-        "predicted": 232.7
+        "actual": 172.0,
+        "predicted": 171.67
       },
       {
-        "actual": 257.2,
-        "predicted": 259.61
+        "actual": 256.15,
+        "predicted": 253.72
       },
       {
-        "actual": 170.45,
-        "predicted": 170.05
+        "actual": 251.22,
+        "predicted": 248.92
       },
       {
-        "actual": 241.75,
-        "predicted": 240.83
+        "actual": 226.14,
+        "predicted": 226.6
       },
       {
-        "actual": 270.73,
-        "predicted": 276.13
+        "actual": 312.55,
+        "predicted": 306.66
       },
       {
-        "actual": 183.23,
-        "predicted": 184.42
+        "actual": 252.51,
+        "predicted": 253.12
       },
       {
-        "actual": 296.52,
-        "predicted": 294.56
+        "actual": 269.48,
+        "predicted": 270.99
       },
       {
-        "actual": 303.47,
-        "predicted": 302.75
+        "actual": 345.53,
+        "predicted": 345.26
       },
       {
-        "actual": 239.22,
-        "predicted": 239.7
+        "actual": 196.12,
+        "predicted": 197.04
       },
       {
-        "actual": 330.54,
-        "predicted": 320.85
+        "actual": 269.79,
+        "predicted": 271.63
       },
       {
-        "actual": 218.22,
-        "predicted": 227.6
+        "actual": 298.65,
+        "predicted": 306.63
       },
       {
-        "actual": 257.37,
-        "predicted": 255.34
+        "actual": 172.45,
+        "predicted": 174.37
       },
       {
-        "actual": 311.38,
-        "predicted": 315.14
-      },
-      {
-        "actual": 177.77,
-        "predicted": 180.28
-      },
-      {
-        "actual": 255.76,
-        "predicted": 250.44
-      },
-      {
-        "actual": 296.31,
-        "predicted": 299.46
-      },
-      {
-        "actual": 179.05,
-        "predicted": 182.27
-      },
-      {
-        "actual": 331.87,
-        "predicted": 330.21
-      },
-      {
-        "actual": 304.39,
-        "predicted": 309.88
-      },
-      {
-        "actual": 284.92,
-        "predicted": 279.06
-      },
-      {
-        "actual": 460.19,
-        "predicted": 462.18
-      },
-      {
-        "actual": 296.52,
-        "predicted": 295.26
-      },
-      {
-        "actual": 368.13,
-        "predicted": 354.61
-      },
-      {
-        "actual": 399.0,
-        "predicted": 395.75
-      },
-      {
-        "actual": 215.64,
-        "predicted": 216.45
-      },
-      {
-        "actual": 341.94,
-        "predicted": 341.51
-      },
-      {
-        "actual": 340.14,
-        "predicted": 338.83
-      },
-      {
-        "actual": 239.53,
-        "predicted": 232.52
-      },
-      {
-        "actual": 351.93,
-        "predicted": 345.09
-      },
-      {
-        "actual": 271.71,
-        "predicted": 274.98
-      },
-      {
-        "actual": 270.66,
-        "predicted": 267.48
-      },
-      {
-        "actual": 283.83,
-        "predicted": 290.98
-      },
-      {
-        "actual": 191.4,
-        "predicted": 190.88
-      },
-      {
-        "actual": 241.0,
-        "predicted": 237.52
-      },
-      {
-        "actual": 260.63,
-        "predicted": 266.75
-      },
-      {
-        "actual": 183.76,
-        "predicted": 184.8
-      },
-      {
-        "actual": 315.2,
-        "predicted": 306.21
-      },
-      {
-        "actual": 306.4,
-        "predicted": 303.67
-      },
-      {
-        "actual": 235.71,
-        "predicted": 233.49
-      },
-      {
-        "actual": 341.35,
-        "predicted": 339.09
-      },
-      {
-        "actual": 222.35,
-        "predicted": 229.5
-      },
-      {
-        "actual": 256.08,
-        "predicted": 254.93
-      },
-      {
-        "actual": 336.93,
-        "predicted": 339.03
-      },
-      {
-        "actual": 197.34,
-        "predicted": 200.36
-      },
-      {
-        "actual": 289.6,
-        "predicted": 289.28
-      },
-      {
-        "actual": 296.51,
-        "predicted": 296.33
-      },
-      {
-        "actual": 221.7,
-        "predicted": 216.9
-      },
-      {
-        "actual": 378.57,
-        "predicted": 376.54
-      },
-      {
-        "actual": 329.61,
-        "predicted": 335.85
-      },
-      {
-        "actual": 273.93,
-        "predicted": 271.6
-      },
-      {
-        "actual": 421.8,
-        "predicted": 413.89
-      },
-      {
-        "actual": 267.37,
-        "predicted": 270.39
-      },
-      {
-        "actual": 316.25,
-        "predicted": 295.87
-      },
-      {
-        "actual": 428.78,
-        "predicted": 440.2
-      },
-      {
-        "actual": 246.28,
-        "predicted": 253.65
-      },
-      {
-        "actual": 393.14,
-        "predicted": 384.46
-      },
-      {
-        "actual": 418.52,
-        "predicted": 423.7
-      },
-      {
-        "actual": 269.05,
-        "predicted": 263.26
-      },
-      {
-        "actual": 486.37,
-        "predicted": 460.7
-      },
-      {
-        "actual": 380.54,
-        "predicted": 404.0
-      },
-      {
-        "actual": 355.22,
-        "predicted": 341.09
-      },
-      {
-        "actual": 479.83,
-        "predicted": 451.07
+        "actual": 265.63,
+        "predicted": 265.82
       },
       {
         "actual": 288.08,
-        "predicted": 289.65
+        "predicted": 276.24
       },
       {
-        "actual": 351.01,
-        "predicted": 336.78
+        "actual": 179.34,
+        "predicted": 182.76
       },
       {
-        "actual": 379.26,
-        "predicted": 381.27
+        "actual": 339.03,
+        "predicted": 336.4
       },
       {
-        "actual": 257.55,
-        "predicted": 254.62
+        "actual": 288.92,
+        "predicted": 293.7
       },
       {
-        "actual": 428.57,
-        "predicted": 427.41
+        "actual": 291.54,
+        "predicted": 283.64
       },
       {
-        "actual": 407.21,
-        "predicted": 405.22
+        "actual": 461.93,
+        "predicted": 449.05
       },
       {
-        "actual": 298.66,
-        "predicted": 288.19
+        "actual": 296.52,
+        "predicted": 299.04
       },
       {
-        "actual": 378.86,
-        "predicted": 376.77
+        "actual": 363.83,
+        "predicted": 351.52
       },
       {
-        "actual": 251.08,
-        "predicted": 255.8
+        "actual": 402.71,
+        "predicted": 401.39
       },
       {
-        "actual": 219.48,
-        "predicted": 218.28
+        "actual": 219.18,
+        "predicted": 218.64
       },
       {
-        "actual": 289.71,
-        "predicted": 288.78
+        "actual": 336.1,
+        "predicted": 335.51
       },
       {
-        "actual": 179.19,
-        "predicted": 182.73
+        "actual": 348.37,
+        "predicted": 341.93
       },
       {
-        "actual": 231.87,
-        "predicted": 222.9
+        "actual": 228.35,
+        "predicted": 223.03
       },
       {
-        "actual": 307.41,
-        "predicted": 317.32
+        "actual": 341.33,
+        "predicted": 337.18
       },
       {
-        "actual": 191.37,
-        "predicted": 186.76
+        "actual": 307.65,
+        "predicted": 308.62
       },
       {
-        "actual": 342.77,
-        "predicted": 339.89
+        "actual": 251.49,
+        "predicted": 257.33
       },
       {
-        "actual": 317.28,
-        "predicted": 326.19
+        "actual": 289.0,
+        "predicted": 294.01
       },
       {
-        "actual": 253.08,
-        "predicted": 251.68
+        "actual": 209.66,
+        "predicted": 213.38
       },
       {
-        "actual": 435.67,
-        "predicted": 417.76
+        "actual": 223.07,
+        "predicted": 223.73
+      },
+      {
+        "actual": 261.14,
+        "predicted": 259.37
+      },
+      {
+        "actual": 192.31,
+        "predicted": 192.42
+      },
+      {
+        "actual": 273.79,
+        "predicted": 261.83
+      },
+      {
+        "actual": 337.72,
+        "predicted": 339.04
+      },
+      {
+        "actual": 204.88,
+        "predicted": 203.09
+      },
+      {
+        "actual": 319.06,
+        "predicted": 319.37
+      },
+      {
+        "actual": 299.82,
+        "predicted": 290.05
+      },
+      {
+        "actual": 205.73,
+        "predicted": 207.71
+      },
+      {
+        "actual": 320.21,
+        "predicted": 319.79
+      },
+      {
+        "actual": 249.88,
+        "predicted": 253.67
+      },
+      {
+        "actual": 255.51,
+        "predicted": 259.24
+      },
+      {
+        "actual": 300.18,
+        "predicted": 299.51
+      },
+      {
+        "actual": 224.01,
+        "predicted": 223.29
+      },
+      {
+        "actual": 322.39,
+        "predicted": 307.4
+      },
+      {
+        "actual": 400.49,
+        "predicted": 398.59
+      },
+      {
+        "actual": 227.53,
+        "predicted": 228.31
+      },
+      {
+        "actual": 378.47,
+        "predicted": 373.68
+      },
+      {
+        "actual": 382.99,
+        "predicted": 385.47
+      },
+      {
+        "actual": 216.7,
+        "predicted": 220.57
+      },
+      {
+        "actual": 396.41,
+        "predicted": 392.42
+      },
+      {
+        "actual": 352.91,
+        "predicted": 357.69
+      },
+      {
+        "actual": 248.1,
+        "predicted": 238.8
+      },
+      {
+        "actual": 444.36,
+        "predicted": 445.11
+      },
+      {
+        "actual": 312.21,
+        "predicted": 318.04
+      },
+      {
+        "actual": 369.11,
+        "predicted": 351.7
+      },
+      {
+        "actual": 499.11,
+        "predicted": 453.5
+      },
+      {
+        "actual": 304.19,
+        "predicted": 312.23
+      },
+      {
+        "actual": 440.14,
+        "predicted": 424.56
+      },
+      {
+        "actual": 426.2,
+        "predicted": 430.17
+      },
+      {
+        "actual": 257.98,
+        "predicted": 262.23
+      },
+      {
+        "actual": 407.06,
+        "predicted": 410.41
+      },
+      {
+        "actual": 351.99,
+        "predicted": 347.27
+      },
+      {
+        "actual": 281.71,
+        "predicted": 279.53
+      },
+      {
+        "actual": 448.27,
+        "predicted": 442.49
+      },
+      {
+        "actual": 344.73,
+        "predicted": 350.76
+      },
+      {
+        "actual": 333.85,
+        "predicted": 332.01
+      },
+      {
+        "actual": 379.91,
+        "predicted": 383.85
+      },
+      {
+        "actual": 217.56,
+        "predicted": 221.34
+      },
+      {
+        "actual": 235.21,
+        "predicted": 236.07
+      },
+      {
+        "actual": 286.61,
+        "predicted": 294.72
+      },
+      {
+        "actual": 170.96,
+        "predicted": 172.12
+      },
+      {
+        "actual": 244.14,
+        "predicted": 238.93
+      },
+      {
+        "actual": 294.43,
+        "predicted": 297.79
+      },
+      {
+        "actual": 199.42,
+        "predicted": 195.94
+      },
+      {
+        "actual": 350.73,
+        "predicted": 344.06
+      },
+      {
+        "actual": 300.79,
+        "predicted": 302.76
+      },
+      {
+        "actual": 259.9,
+        "predicted": 257.43
+      },
+      {
+        "actual": 438.7,
+        "predicted": 421.95
       },
       {
         "actual": 292.14,
-        "predicted": 297.55
+        "predicted": 300.11
       },
       {
-        "actual": 338.19,
-        "predicted": 334.42
+        "actual": 333.47,
+        "predicted": 328.19
       },
       {
-        "actual": 414.79,
-        "predicted": 409.38
+        "actual": 417.75,
+        "predicted": 415.32
       },
       {
-        "actual": 228.57,
-        "predicted": 230.19
+        "actual": 232.46,
+        "predicted": 236.6
       },
       {
-        "actual": 345.28,
-        "predicted": 342.85
+        "actual": 337.95,
+        "predicted": 335.31
       },
       {
-        "actual": 349.68,
-        "predicted": 352.61
+        "actual": 361.41,
+        "predicted": 368.06
       },
       {
-        "actual": 219.34,
-        "predicted": 221.31
+        "actual": 213.01,
+        "predicted": 211.88
       },
       {
-        "actual": 373.5,
-        "predicted": 367.65
+        "actual": 360.71,
+        "predicted": 356.5
       },
       {
-        "actual": 288.96,
-        "predicted": 288.94
+        "actual": 324.23,
+        "predicted": 319.22
       },
       {
-        "actual": 229.82,
-        "predicted": 225.82
+        "actual": 207.53,
+        "predicted": 208.31
       },
       {
-        "actual": 385.07,
-        "predicted": 377.85
+        "actual": 367.29,
+        "predicted": 363.3
       },
       {
-        "actual": 252.94,
-        "predicted": 254.32
+        "actual": 286.23,
+        "predicted": 285.96
       },
       {
-        "actual": 276.2,
-        "predicted": 268.58
+        "actual": 246.4,
+        "predicted": 244.01
       },
       {
-        "actual": 362.23,
-        "predicted": 371.85
+        "actual": 355.29,
+        "predicted": 349.2
       },
       {
-        "actual": 234.02,
-        "predicted": 232.4
+        "actual": 246.66,
+        "predicted": 246.07
       },
       {
-        "actual": 432.61,
-        "predicted": 425.71
+        "actual": 376.17,
+        "predicted": 359.19
       },
       {
-        "actual": 415.99,
-        "predicted": 419.43
+        "actual": 451.25,
+        "predicted": 441.46
       },
       {
-        "actual": 291.22,
-        "predicted": 281.15
+        "actual": 271.33,
+        "predicted": 270.9
       },
       {
-        "actual": 427.68,
-        "predicted": 457.06
+        "actual": 430.41,
+        "predicted": 420.83
       },
       {
-        "actual": 281.69,
-        "predicted": 282.69
+        "actual": 352.06,
+        "predicted": 347.64
       },
       {
-        "actual": 288.8,
-        "predicted": 286.46
+        "actual": 232.46,
+        "predicted": 229.42
       },
       {
-        "actual": 390.38,
-        "predicted": 386.92
+        "actual": 367.39,
+        "predicted": 364.95
       },
       {
-        "actual": 217.05,
-        "predicted": 216.11
+        "actual": 291.57,
+        "predicted": 295.45
       },
       {
-        "actual": 299.61,
-        "predicted": 295.57
+        "actual": 250.96,
+        "predicted": 252.08
       },
       {
-        "actual": 360.58,
-        "predicted": 374.43
+        "actual": 374.57,
+        "predicted": 369.02
       },
       {
-        "actual": 207.7,
-        "predicted": 204.63
+        "actual": 237.39,
+        "predicted": 237.44
       },
       {
-        "actual": 351.89,
-        "predicted": 350.32
+        "actual": 299.48,
+        "predicted": 292.61
       },
       {
-        "actual": 299.65,
-        "predicted": 293.84
+        "actual": 367.44,
+        "predicted": 370.26
       },
       {
-        "actual": 209.38,
-        "predicted": 207.86
+        "actual": 208.89,
+        "predicted": 207.89
       },
       {
-        "actual": 263.71,
-        "predicted": 266.15
+        "actual": 270.9,
+        "predicted": 277.26
       },
       {
-        "actual": 216.02,
-        "predicted": 212.86
+        "actual": 255.13,
+        "predicted": 256.68
       },
       {
-        "actual": 232.22,
-        "predicted": 231.16
+        "actual": 192.57,
+        "predicted": 195.24
       },
       {
-        "actual": 330.43,
-        "predicted": 336.63
+        "actual": 298.2,
+        "predicted": 293.29
       },
       {
-        "actual": 234.98,
-        "predicted": 233.81
+        "actual": 300.38,
+        "predicted": 295.09
       },
       {
-        "actual": 353.37,
-        "predicted": 351.04
+        "actual": 281.34,
+        "predicted": 283.01
       },
       {
-        "actual": 361.92,
-        "predicted": 353.35
+        "actual": 388.26,
+        "predicted": 381.77
       },
       {
-        "actual": 255.64,
-        "predicted": 248.42
+        "actual": 285.04,
+        "predicted": 281.59
       },
       {
-        "actual": 383.48,
-        "predicted": 379.72
+        "actual": 322.21,
+        "predicted": 321.63
       },
       {
-        "actual": 317.3,
-        "predicted": 324.63
+        "actual": 388.82,
+        "predicted": 388.44
       },
       {
-        "actual": 294.52,
-        "predicted": 293.14
+        "actual": 255.37,
+        "predicted": 253.57
       },
       {
-        "actual": 374.28,
-        "predicted": 371.59
+        "actual": 334.88,
+        "predicted": 335.09
       },
       {
-        "actual": 245.71,
-        "predicted": 243.09
+        "actual": 348.45,
+        "predicted": 347.92
       },
       {
-        "actual": 317.26,
-        "predicted": 313.54
+        "actual": 226.04,
+        "predicted": 224.13
       },
       {
-        "actual": 417.03,
-        "predicted": 421.86
+        "actual": 365.76,
+        "predicted": 360.46
       },
       {
-        "actual": 235.1,
-        "predicted": 236.27
+        "actual": 377.65,
+        "predicted": 377.22
       },
       {
-        "actual": 391.65,
-        "predicted": 394.42
+        "actual": 249.91,
+        "predicted": 246.18
       },
       {
-        "actual": 329.31,
-        "predicted": 322.98
+        "actual": 413.46,
+        "predicted": 413.12
       },
       {
-        "actual": 214.93,
-        "predicted": 221.02
+        "actual": 285.2,
+        "predicted": 282.41
       },
       {
-        "actual": 356.15,
-        "predicted": 355.98
+        "actual": 238.38,
+        "predicted": 236.17
       },
       {
-        "actual": 268.16,
-        "predicted": 268.78
+        "actual": 367.37,
+        "predicted": 366.95
       },
       {
-        "actual": 217.6,
-        "predicted": 215.45
+        "actual": 235.12,
+        "predicted": 233.92
       },
       {
-        "actual": 346.8,
-        "predicted": 344.73
+        "actual": 245.18,
+        "predicted": 244.41
       },
       {
-        "actual": 217.06,
-        "predicted": 215.61
+        "actual": 349.22,
+        "predicted": 350.7
       },
       {
-        "actual": 306.88,
-        "predicted": 307.55
+        "actual": 207.05,
+        "predicted": 206.08
       },
       {
-        "actual": 309.6,
-        "predicted": 312.41
+        "actual": 313.34,
+        "predicted": 317.8
       },
       {
-        "actual": 205.93,
-        "predicted": 201.95
+        "actual": 305.99,
+        "predicted": 300.27
       },
       {
-        "actual": 339.27,
-        "predicted": 341.68
+        "actual": 213.61,
+        "predicted": 210.45
       },
       {
-        "actual": 324.6,
-        "predicted": 324.19
+        "actual": 343.23,
+        "predicted": 343.22
       },
       {
-        "actual": 272.16,
-        "predicted": 269.89
+        "actual": 312.1,
+        "predicted": 313.26
       },
       {
-        "actual": 414.47,
-        "predicted": 406.9
+        "actual": 277.74,
+        "predicted": 278.44
+      },
+      {
+        "actual": 417.84,
+        "predicted": 406.78
       },
       {
         "actual": 296.94,
-        "predicted": 300.4
+        "predicted": 303.08
       }
     ]
   },
   "6h": {
-    "model": "random_forest",
-    "r2": 0.7917,
+    "model": "hist_gradient_boosting",
+    "r2": 0.8698,
     "points": [
       {
-        "actual": 274.53,
-        "predicted": 247.96
+        "actual": 230.63,
+        "predicted": 221.45
       },
       {
-        "actual": 308.14,
-        "predicted": 325.29
+        "actual": 307.31,
+        "predicted": 333.81
       },
       {
-        "actual": 187.26,
-        "predicted": 189.94
+        "actual": 201.82,
+        "predicted": 189.8
       },
       {
-        "actual": 298.79,
-        "predicted": 280.41
+        "actual": 231.27,
+        "predicted": 254.47
       },
       {
-        "actual": 268.18,
-        "predicted": 287.06
+        "actual": 240.82,
+        "predicted": 253.08
       },
       {
-        "actual": 186.84,
-        "predicted": 194.48
+        "actual": 167.09,
+        "predicted": 170.18
       },
       {
-        "actual": 242.97,
-        "predicted": 263.85
+        "actual": 248.38,
+        "predicted": 255.18
       },
       {
-        "actual": 182.22,
-        "predicted": 171.2
+        "actual": 247.4,
+        "predicted": 258.05
       },
       {
-        "actual": 241.19,
-        "predicted": 234.31
+        "actual": 180.76,
+        "predicted": 195.49
       },
       {
-        "actual": 256.28,
-        "predicted": 264.84
+        "actual": 259.97,
+        "predicted": 262.63
       },
       {
-        "actual": 167.4,
-        "predicted": 170.85
+        "actual": 233.95,
+        "predicted": 235.91
       },
       {
-        "actual": 245.22,
-        "predicted": 239.49
+        "actual": 241.77,
+        "predicted": 236.93
       },
       {
-        "actual": 268.85,
-        "predicted": 270.74
+        "actual": 315.71,
+        "predicted": 315.31
       },
       {
-        "actual": 190.29,
-        "predicted": 180.17
+        "actual": 237.17,
+        "predicted": 213.09
       },
       {
-        "actual": 301.69,
-        "predicted": 270.22
+        "actual": 274.48,
+        "predicted": 284.45
       },
       {
-        "actual": 284.26,
-        "predicted": 258.41
+        "actual": 344.41,
+        "predicted": 321.0
       },
       {
-        "actual": 255.09,
-        "predicted": 273.74
+        "actual": 189.27,
+        "predicted": 232.12
       },
       {
-        "actual": 338.64,
-        "predicted": 304.75
+        "actual": 273.17,
+        "predicted": 268.8
       },
       {
-        "actual": 209.87,
-        "predicted": 254.29
+        "actual": 288.83,
+        "predicted": 295.2
       },
       {
-        "actual": 261.91,
-        "predicted": 249.98
+        "actual": 171.4,
+        "predicted": 181.84
       },
       {
-        "actual": 308.05,
-        "predicted": 291.01
+        "actual": 272.69,
+        "predicted": 260.13
       },
       {
-        "actual": 173.49,
-        "predicted": 186.85
+        "actual": 281.02,
+        "predicted": 285.32
       },
       {
-        "actual": 263.17,
-        "predicted": 220.47
+        "actual": 182.23,
+        "predicted": 199.57
       },
       {
-        "actual": 289.96,
-        "predicted": 301.5
+        "actual": 349.94,
+        "predicted": 321.88
       },
       {
-        "actual": 179.34,
-        "predicted": 193.96
+        "actual": 274.75,
+        "predicted": 249.93
       },
       {
-        "actual": 339.03,
-        "predicted": 281.9
-      },
-      {
-        "actual": 288.92,
-        "predicted": 253.52
-      },
-      {
-        "actual": 298.17,
-        "predicted": 270.6
+        "actual": 311.42,
+        "predicted": 287.07
       },
       {
         "actual": 460.31,
-        "predicted": 390.08
+        "predicted": 402.01
       },
       {
         "actual": 284.24,
-        "predicted": 261.42
+        "predicted": 278.46
       },
       {
-        "actual": 376.74,
-        "predicted": 322.43
+        "actual": 372.43,
+        "predicted": 355.69
       },
       {
-        "actual": 391.56,
-        "predicted": 348.04
+        "actual": 395.28,
+        "predicted": 363.5
       },
       {
-        "actual": 215.57,
-        "predicted": 214.92
+        "actual": 215.61,
+        "predicted": 242.85
       },
       {
-        "actual": 348.38,
-        "predicted": 330.38
+        "actual": 341.94,
+        "predicted": 335.48
       },
       {
-        "actual": 326.85,
-        "predicted": 319.11
-      },
-      {
-        "actual": 254.45,
-        "predicted": 255.29
-      },
-      {
-        "actual": 356.62,
-        "predicted": 347.17
-      },
-      {
-        "actual": 259.2,
-        "predicted": 252.89
-      },
-      {
-        "actual": 276.28,
-        "predicted": 282.51
-      },
-      {
-        "actual": 281.24,
-        "predicted": 306.89
-      },
-      {
-        "actual": 187.82,
-        "predicted": 183.78
-      },
-      {
-        "actual": 244.44,
-        "predicted": 261.59
-      },
-      {
-        "actual": 260.31,
-        "predicted": 266.21
-      },
-      {
-        "actual": 183.29,
-        "predicted": 175.12
-      },
-      {
-        "actual": 322.68,
-        "predicted": 279.76
-      },
-      {
-        "actual": 293.97,
-        "predicted": 269.49
-      },
-      {
-        "actual": 247.57,
-        "predicted": 239.17
-      },
-      {
-        "actual": 344.82,
-        "predicted": 336.65
-      },
-      {
-        "actual": 212.28,
-        "predicted": 222.12
-      },
-      {
-        "actual": 262.38,
-        "predicted": 262.24
-      },
-      {
-        "actual": 333.48,
-        "predicted": 334.1
-      },
-      {
-        "actual": 195.18,
-        "predicted": 198.5
-      },
-      {
-        "actual": 291.94,
-        "predicted": 274.89
-      },
-      {
-        "actual": 296.16,
-        "predicted": 304.72
-      },
-      {
-        "actual": 225.17,
-        "predicted": 212.67
-      },
-      {
-        "actual": 383.21,
-        "predicted": 349.71
-      },
-      {
-        "actual": 313.06,
-        "predicted": 301.5
-      },
-      {
-        "actual": 287.68,
-        "predicted": 283.92
-      },
-      {
-        "actual": 426.16,
-        "predicted": 394.98
-      },
-      {
-        "actual": 256.32,
-        "predicted": 273.42
-      },
-      {
-        "actual": 323.77,
-        "predicted": 262.16
-      },
-      {
-        "actual": 421.69,
-        "predicted": 379.84
-      },
-      {
-        "actual": 241.5,
-        "predicted": 243.25
-      },
-      {
-        "actual": 403.85,
-        "predicted": 324.52
-      },
-      {
-        "actual": 411.43,
-        "predicted": 339.03
-      },
-      {
-        "actual": 278.93,
-        "predicted": 267.32
-      },
-      {
-        "actual": 487.96,
-        "predicted": 321.77
-      },
-      {
-        "actual": 371.34,
-        "predicted": 323.58
-      },
-      {
-        "actual": 369.1,
-        "predicted": 288.05
-      },
-      {
-        "actual": 474.92,
-        "predicted": 412.47
-      },
-      {
-        "actual": 280.65,
-        "predicted": 283.31
-      },
-      {
-        "actual": 364.78,
-        "predicted": 317.66
-      },
-      {
-        "actual": 375.5,
-        "predicted": 358.5
-      },
-      {
-        "actual": 257.83,
-        "predicted": 226.15
-      },
-      {
-        "actual": 431.97,
-        "predicted": 370.25
-      },
-      {
-        "actual": 391.69,
-        "predicted": 350.19
-      },
-      {
-        "actual": 307.01,
-        "predicted": 287.36
-      },
-      {
-        "actual": 380.03,
-        "predicted": 331.8
-      },
-      {
-        "actual": 244.13,
-        "predicted": 240.67
-      },
-      {
-        "actual": 222.4,
-        "predicted": 242.28
-      },
-      {
-        "actual": 289.56,
-        "predicted": 258.82
-      },
-      {
-        "actual": 176.93,
-        "predicted": 185.85
-      },
-      {
-        "actual": 238.28,
-        "predicted": 213.19
-      },
-      {
-        "actual": 300.25,
-        "predicted": 307.46
-      },
-      {
-        "actual": 194.06,
-        "predicted": 201.12
-      },
-      {
-        "actual": 346.75,
-        "predicted": 277.16
-      },
-      {
-        "actual": 309.04,
-        "predicted": 287.92
-      },
-      {
-        "actual": 259.9,
-        "predicted": 252.4
-      },
-      {
-        "actual": 438.7,
-        "predicted": 364.92
-      },
-      {
-        "actual": 281.56,
-        "predicted": 275.47
-      },
-      {
-        "actual": 343.09,
-        "predicted": 292.26
-      },
-      {
-        "actual": 411.83,
-        "predicted": 367.57
-      },
-      {
-        "actual": 226.63,
-        "predicted": 233.23
-      },
-      {
-        "actual": 348.86,
-        "predicted": 285.79
-      },
-      {
-        "actual": 346.39,
-        "predicted": 350.42
-      },
-      {
-        "actual": 225.69,
-        "predicted": 222.83
-      },
-      {
-        "actual": 376.47,
-        "predicted": 349.83
-      },
-      {
-        "actual": 281.65,
-        "predicted": 269.39
-      },
-      {
-        "actual": 235.63,
-        "predicted": 260.6
-      },
-      {
-        "actual": 386.49,
-        "predicted": 361.62
-      },
-      {
-        "actual": 248.24,
-        "predicted": 238.8
-      },
-      {
-        "actual": 280.83,
-        "predicted": 283.89
-      },
-      {
-        "actual": 360.35,
-        "predicted": 307.0
+        "actual": 340.14,
+        "predicted": 336.68
       },
       {
         "actual": 234.55,
-        "predicted": 212.69
+        "predicted": 221.6
       },
       {
-        "actual": 437.24,
-        "predicted": 298.36
+        "actual": 346.83,
+        "predicted": 354.78
       },
       {
-        "actual": 411.62,
-        "predicted": 358.63
+        "actual": 293.68,
+        "predicted": 311.01
       },
       {
-        "actual": 295.88,
-        "predicted": 292.71
+        "actual": 260.41,
+        "predicted": 272.1
       },
       {
-        "actual": 421.42,
-        "predicted": 325.02
+        "actual": 287.07,
+        "predicted": 314.74
       },
       {
-        "actual": 281.69,
-        "predicted": 266.59
+        "actual": 202.3,
+        "predicted": 206.93
       },
       {
-        "actual": 292.63,
-        "predicted": 275.19
+        "actual": 229.92,
+        "predicted": 238.33
       },
       {
-        "actual": 391.43,
-        "predicted": 363.13
+        "actual": 261.62,
+        "predicted": 248.88
       },
       {
-        "actual": 214.11,
-        "predicted": 226.54
+        "actual": 188.96,
+        "predicted": 171.42
       },
       {
-        "actual": 303.16,
-        "predicted": 278.83
+        "actual": 284.82,
+        "predicted": 244.74
       },
       {
-        "actual": 355.89,
-        "predicted": 337.22
+        "actual": 331.16,
+        "predicted": 332.6
       },
       {
-        "actual": 207.7,
-        "predicted": 208.61
+        "actual": 208.4,
+        "predicted": 197.61
       },
       {
-        "actual": 351.89,
-        "predicted": 295.88
+        "actual": 324.5,
+        "predicted": 339.51
       },
       {
-        "actual": 293.67,
-        "predicted": 278.82
+        "actual": 285.63,
+        "predicted": 294.59
       },
       {
-        "actual": 212.74,
-        "predicted": 215.31
+        "actual": 215.27,
+        "predicted": 227.93
       },
       {
-        "actual": 263.22,
-        "predicted": 295.94
+        "actual": 326.22,
+        "predicted": 321.14
       },
       {
-        "actual": 212.82,
-        "predicted": 180.78
+        "actual": 237.47,
+        "predicted": 233.12
       },
       {
-        "actual": 232.22,
-        "predicted": 236.92
+        "actual": 262.18,
+        "predicted": 262.27
       },
       {
-        "actual": 330.43,
-        "predicted": 329.62
+        "actual": 301.19,
+        "predicted": 325.52
       },
       {
-        "actual": 234.51,
-        "predicted": 207.46
+        "actual": 219.32,
+        "predicted": 191.91
       },
       {
-        "actual": 355.91,
-        "predicted": 292.55
+        "actual": 331.36,
+        "predicted": 297.27
       },
       {
-        "actual": 360.31,
-        "predicted": 357.51
+        "actual": 394.18,
+        "predicted": 355.29
       },
       {
-        "actual": 259.1,
-        "predicted": 266.4
+        "actual": 225.13,
+        "predicted": 229.31
       },
       {
-        "actual": 383.48,
-        "predicted": 389.64
+        "actual": 382.28,
+        "predicted": 334.2
       },
       {
-        "actual": 317.3,
-        "predicted": 291.18
+        "actual": 374.46,
+        "predicted": 361.41
       },
       {
-        "actual": 294.52,
-        "predicted": 311.59
+        "actual": 217.64,
+        "predicted": 240.64
       },
       {
-        "actual": 374.13,
-        "predicted": 367.0
+        "actual": 401.91,
+        "predicted": 370.38
       },
       {
-        "actual": 242.23,
-        "predicted": 224.83
+        "actual": 337.84,
+        "predicted": 337.1
       },
       {
-        "actual": 321.95,
-        "predicted": 308.78
+        "actual": 253.1,
+        "predicted": 261.02
       },
       {
-        "actual": 417.03,
-        "predicted": 383.3
+        "actual": 448.56,
+        "predicted": 416.25
       },
       {
-        "actual": 235.1,
-        "predicted": 246.15
+        "actual": 306.71,
+        "predicted": 290.86
       },
       {
-        "actual": 391.65,
-        "predicted": 362.63
+        "actual": 385.04,
+        "predicted": 341.0
       },
       {
-        "actual": 329.31,
-        "predicted": 352.65
+        "actual": 497.34,
+        "predicted": 418.72
       },
       {
-        "actual": 215.85,
-        "predicted": 197.42
+        "actual": 297.37,
+        "predicted": 270.51
       },
       {
-        "actual": 358.0,
-        "predicted": 330.18
+        "actual": 452.95,
+        "predicted": 367.83
       },
       {
-        "actual": 268.16,
+        "actual": 421.61,
+        "predicted": 374.05
+      },
+      {
+        "actual": 256.48,
+        "predicted": 267.23
+      },
+      {
+        "actual": 409.67,
+        "predicted": 340.04
+      },
+      {
+        "actual": 343.87,
+        "predicted": 338.64
+      },
+      {
+        "actual": 293.72,
+        "predicted": 278.01
+      },
+      {
+        "actual": 449.43,
+        "predicted": 422.53
+      },
+      {
+        "actual": 331.01,
+        "predicted": 306.77
+      },
+      {
+        "actual": 338.09,
+        "predicted": 347.38
+      },
+      {
+        "actual": 378.78,
+        "predicted": 395.76
+      },
+      {
+        "actual": 213.99,
+        "predicted": 276.34
+      },
+      {
+        "actual": 237.53,
+        "predicted": 267.47
+      },
+      {
+        "actual": 281.58,
+        "predicted": 252.3
+      },
+      {
+        "actual": 170.38,
+        "predicted": 173.78
+      },
+      {
+        "actual": 250.0,
+        "predicted": 231.7
+      },
+      {
+        "actual": 292.19,
+        "predicted": 295.68
+      },
+      {
+        "actual": 203.87,
+        "predicted": 202.45
+      },
+      {
+        "actual": 354.7,
+        "predicted": 326.49
+      },
+      {
+        "actual": 292.53,
+        "predicted": 289.24
+      },
+      {
+        "actual": 272.76,
+        "predicted": 272.31
+      },
+      {
+        "actual": 441.73,
+        "predicted": 375.42
+      },
+      {
+        "actual": 281.56,
+        "predicted": 250.28
+      },
+      {
+        "actual": 338.19,
+        "predicted": 340.08
+      },
+      {
+        "actual": 414.79,
+        "predicted": 380.19
+      },
+      {
+        "actual": 230.51,
+        "predicted": 246.46
+      },
+      {
+        "actual": 341.7,
+        "predicted": 343.8
+      },
+      {
+        "actual": 353.59,
+        "predicted": 336.68
+      },
+      {
+        "actual": 215.12,
+        "predicted": 214.01
+      },
+      {
+        "actual": 364.58,
+        "predicted": 344.37
+      },
+      {
+        "actual": 317.35,
+        "predicted": 322.11
+      },
+      {
+        "actual": 211.65,
+        "predicted": 205.15
+      },
+      {
+        "actual": 370.48,
+        "predicted": 364.94
+      },
+      {
+        "actual": 279.84,
+        "predicted": 267.27
+      },
+      {
+        "actual": 251.53,
+        "predicted": 244.16
+      },
+      {
+        "actual": 359.02,
+        "predicted": 361.26
+      },
+      {
+        "actual": 243.9,
+        "predicted": 227.22
+      },
+      {
+        "actual": 383.37,
+        "predicted": 316.52
+      },
+      {
+        "actual": 447.47,
+        "predicted": 372.41
+      },
+      {
+        "actual": 271.33,
+        "predicted": 261.24
+      },
+      {
+        "actual": 434.0,
+        "predicted": 373.38
+      },
+      {
+        "actual": 349.24,
+        "predicted": 337.9
+      },
+      {
+        "actual": 236.41,
+        "predicted": 257.12
+      },
+      {
+        "actual": 369.95,
+        "predicted": 369.97
+      },
+      {
+        "actual": 283.63,
+        "predicted": 288.24
+      },
+      {
+        "actual": 255.1,
+        "predicted": 256.36
+      },
+      {
+        "actual": 374.57,
+        "predicted": 362.52
+      },
+      {
+        "actual": 233.33,
+        "predicted": 232.26
+      },
+      {
+        "actual": 304.02,
+        "predicted": 285.3
+      },
+      {
+        "actual": 363.92,
+        "predicted": 358.88
+      },
+      {
+        "actual": 207.04,
+        "predicted": 210.45
+      },
+      {
+        "actual": 270.9,
+        "predicted": 283.3
+      },
+      {
+        "actual": 255.38,
+        "predicted": 252.7
+      },
+      {
+        "actual": 192.57,
+        "predicted": 171.43
+      },
+      {
+        "actual": 301.6,
+        "predicted": 258.03
+      },
+      {
+        "actual": 295.85,
         "predicted": 252.88
       },
       {
-        "actual": 217.6,
-        "predicted": 259.04
+        "actual": 281.34,
+        "predicted": 245.48
       },
       {
-        "actual": 346.8,
-        "predicted": 299.64
+        "actual": 389.47,
+        "predicted": 357.76
       },
       {
-        "actual": 217.06,
-        "predicted": 213.47
+        "actual": 285.04,
+        "predicted": 267.31
       },
       {
-        "actual": 306.88,
-        "predicted": 281.88
+        "actual": 325.86,
+        "predicted": 340.63
       },
       {
-        "actual": 307.88,
-        "predicted": 311.78
+        "actual": 388.82,
+        "predicted": 358.24
       },
       {
-        "actual": 205.93,
-        "predicted": 190.26
+        "actual": 255.37,
+        "predicted": 239.95
       },
       {
-        "actual": 339.27,
-        "predicted": 324.47
+        "actual": 337.77,
+        "predicted": 345.5
       },
       {
-        "actual": 324.6,
-        "predicted": 315.58
+        "actual": 348.45,
+        "predicted": 359.92
       },
       {
-        "actual": 272.16,
-        "predicted": 255.14
+        "actual": 226.56,
+        "predicted": 217.79
       },
       {
-        "actual": 414.47,
-        "predicted": 402.39
+        "actual": 365.76,
+        "predicted": 327.78
+      },
+      {
+        "actual": 373.17,
+        "predicted": 359.38
+      },
+      {
+        "actual": 249.91,
+        "predicted": 254.71
+      },
+      {
+        "actual": 413.46,
+        "predicted": 411.68
+      },
+      {
+        "actual": 279.16,
+        "predicted": 290.69
+      },
+      {
+        "actual": 238.38,
+        "predicted": 254.2
+      },
+      {
+        "actual": 368.64,
+        "predicted": 366.18
+      },
+      {
+        "actual": 235.12,
+        "predicted": 238.15
+      },
+      {
+        "actual": 245.18,
+        "predicted": 253.47
+      },
+      {
+        "actual": 349.22,
+        "predicted": 334.92
+      },
+      {
+        "actual": 207.05,
+        "predicted": 206.81
+      },
+      {
+        "actual": 314.47,
+        "predicted": 320.94
+      },
+      {
+        "actual": 305.99,
+        "predicted": 311.72
+      },
+      {
+        "actual": 213.61,
+        "predicted": 201.87
+      },
+      {
+        "actual": 343.23,
+        "predicted": 334.83
+      },
+      {
+        "actual": 312.1,
+        "predicted": 268.17
+      },
+      {
+        "actual": 277.74,
+        "predicted": 251.35
+      },
+      {
+        "actual": 417.84,
+        "predicted": 414.43
       },
       {
         "actual": 296.94,
-        "predicted": 266.05
+        "predicted": 268.19
       }
     ]
   },
   "24h": {
-    "model": "linear_regression",
-    "r2": 0.7011,
+    "model": "hist_gradient_boosting",
+    "r2": 0.743,
     "points": [
       {
-        "actual": 306.62,
-        "predicted": 254.62
+        "actual": 277.83,
+        "predicted": 270.36
       },
       {
-        "actual": 279.13,
-        "predicted": 234.27
+        "actual": 286.37,
+        "predicted": 324.68
       },
       {
-        "actual": 200.97,
-        "predicted": 209.48
+        "actual": 184.74,
+        "predicted": 195.41
       },
       {
-        "actual": 309.15,
-        "predicted": 310.49
+        "actual": 243.98,
+        "predicted": 296.05
       },
       {
-        "actual": 219.62,
-        "predicted": 213.46
+        "actual": 232.61,
+        "predicted": 283.95
       },
       {
-        "actual": 220.45,
-        "predicted": 248.01
+        "actual": 202.65,
+        "predicted": 232.05
       },
       {
-        "actual": 243.06,
-        "predicted": 293.77
+        "actual": 250.69,
+        "predicted": 259.88
       },
       {
-        "actual": 167.95,
-        "predicted": 192.12
+        "actual": 200.2,
+        "predicted": 208.96
       },
       {
-        "actual": 247.89,
-        "predicted": 247.96
+        "actual": 225.09,
+        "predicted": 248.09
       },
       {
-        "actual": 248.91,
-        "predicted": 248.04
+        "actual": 277.79,
+        "predicted": 271.13
       },
       {
-        "actual": 174.92,
-        "predicted": 190.59
+        "actual": 189.79,
+        "predicted": 182.57
       },
       {
-        "actual": 257.42,
-        "predicted": 260.23
+        "actual": 268.92,
+        "predicted": 255.27
       },
       {
-        "actual": 239.95,
-        "predicted": 236.06
+        "actual": 325.79,
+        "predicted": 289.61
       },
       {
-        "actual": 241.77,
-        "predicted": 231.46
+        "actual": 208.28,
+        "predicted": 183.42
       },
       {
-        "actual": 317.3,
-        "predicted": 270.35
+        "actual": 294.8,
+        "predicted": 288.46
       },
       {
-        "actual": 233.37,
-        "predicted": 192.38
+        "actual": 313.99,
+        "predicted": 326.07
       },
       {
-        "actual": 279.16,
-        "predicted": 270.84
+        "actual": 189.91,
+        "predicted": 213.07
       },
       {
-        "actual": 341.89,
-        "predicted": 316.98
+        "actual": 292.07,
+        "predicted": 327.12
       },
       {
-        "actual": 186.42,
-        "predicted": 211.48
+        "actual": 256.52,
+        "predicted": 289.28
       },
       {
-        "actual": 278.3,
-        "predicted": 281.5
+        "actual": 185.27,
+        "predicted": 202.26
       },
       {
-        "actual": 279.93,
-        "predicted": 290.08
+        "actual": 299.13,
+        "predicted": 301.83
       },
       {
-        "actual": 171.33,
-        "predicted": 188.95
+        "actual": 225.25,
+        "predicted": 218.81
       },
       {
-        "actual": 283.72,
-        "predicted": 283.05
+        "actual": 226.99,
+        "predicted": 206.05
       },
       {
-        "actual": 253.69,
-        "predicted": 228.32
+        "actual": 370.93,
+        "predicted": 342.25
       },
       {
-        "actual": 203.37,
-        "predicted": 195.26
+        "actual": 231.93,
+        "predicted": 210.83
       },
       {
-        "actual": 366.66,
-        "predicted": 306.22
+        "actual": 373.12,
+        "predicted": 302.75
       },
       {
-        "actual": 237.73,
-        "predicted": 199.02
-      },
-      {
-        "actual": 359.62,
-        "predicted": 268.65
-      },
-      {
-        "actual": 445.9,
-        "predicted": 348.58
+        "actual": 442.4,
+        "predicted": 361.23
       },
       {
         "actual": 267.47,
-        "predicted": 221.13
+        "predicted": 214.22
       },
       {
         "actual": 396.25,
-        "predicted": 397.68
+        "predicted": 371.61
       },
       {
         "actual": 355.55,
-        "predicted": 384.4
+        "predicted": 375.5
       },
       {
-        "actual": 235.17,
-        "predicted": 287.41
+        "actual": 230.18,
+        "predicted": 248.67
       },
       {
-        "actual": 369.5,
-        "predicted": 377.3
+        "actual": 368.2,
+        "predicted": 348.44
       },
       {
-        "actual": 278.85,
-        "predicted": 261.12
+        "actual": 292.96,
+        "predicted": 268.45
       },
       {
-        "actual": 284.57,
-        "predicted": 267.76
+        "actual": 278.45,
+        "predicted": 256.8
       },
       {
-        "actual": 370.26,
-        "predicted": 355.18
+        "actual": 366.01,
+        "predicted": 363.03
       },
       {
-        "actual": 227.41,
-        "predicted": 229.12
+        "actual": 238.28,
+        "predicted": 243.29
       },
       {
-        "actual": 289.86,
-        "predicted": 291.01
+        "actual": 282.87,
+        "predicted": 292.87
       },
       {
-        "actual": 265.02,
-        "predicted": 319.07
+        "actual": 274.6,
+        "predicted": 353.41
       },
       {
-        "actual": 181.21,
-        "predicted": 201.35
+        "actual": 184.96,
+        "predicted": 210.37
       },
       {
-        "actual": 248.11,
-        "predicted": 279.9
+        "actual": 245.59,
+        "predicted": 251.53
       },
       {
-        "actual": 255.6,
-        "predicted": 246.42
+        "actual": 260.31,
+        "predicted": 254.75
       },
       {
-        "actual": 186.45,
-        "predicted": 188.4
+        "actual": 183.29,
+        "predicted": 184.63
       },
       {
-        "actual": 338.98,
-        "predicted": 254.72
+        "actual": 318.94,
+        "predicted": 245.0
       },
       {
-        "actual": 247.81,
-        "predicted": 220.11
+        "actual": 300.18,
+        "predicted": 259.81
       },
       {
-        "actual": 278.3,
-        "predicted": 227.59
+        "actual": 235.71,
+        "predicted": 225.28
       },
       {
-        "actual": 351.5,
-        "predicted": 343.35
+        "actual": 341.35,
+        "predicted": 343.6
       },
       {
-        "actual": 193.35,
-        "predicted": 212.18
+        "actual": 234.71,
+        "predicted": 270.39
       },
       {
-        "actual": 282.66,
-        "predicted": 308.03
+        "actual": 249.79,
+        "predicted": 273.62
       },
       {
-        "actual": 311.82,
-        "predicted": 313.34
+        "actual": 337.55,
+        "predicted": 352.47
       },
       {
-        "actual": 199.16,
-        "predicted": 205.23
+        "actual": 204.1,
+        "predicted": 205.52
       },
       {
-        "actual": 295.2,
-        "predicted": 299.08
+        "actual": 281.71,
+        "predicted": 277.41
       },
       {
-        "actual": 277.56,
-        "predicted": 262.15
+        "actual": 298.57,
+        "predicted": 341.28
       },
       {
-        "actual": 263.04,
-        "predicted": 235.93
+        "actual": 211.77,
+        "predicted": 202.03
       },
       {
-        "actual": 393.78,
-        "predicted": 292.16
+        "actual": 358.57,
+        "predicted": 306.91
       },
       {
-        "actual": 268.18,
-        "predicted": 228.83
+        "actual": 368.16,
+        "predicted": 312.48
       },
       {
-        "actual": 324.46,
-        "predicted": 289.09
+        "actual": 232.87,
+        "predicted": 223.96
       },
       {
-        "actual": 425.79,
-        "predicted": 365.95
+        "actual": 403.2,
+        "predicted": 379.89
       },
       {
-        "actual": 232.08,
-        "predicted": 211.26
+        "actual": 327.31,
+        "predicted": 299.23
       },
       {
-        "actual": 361.78,
-        "predicted": 344.63
+        "actual": 238.66,
+        "predicted": 243.35
       },
       {
-        "actual": 400.76,
-        "predicted": 352.52
+        "actual": 421.45,
+        "predicted": 373.08
       },
       {
-        "actual": 233.5,
-        "predicted": 207.72
+        "actual": 294.25,
+        "predicted": 251.79
       },
       {
-        "actual": 426.78,
-        "predicted": 372.12
+        "actual": 311.74,
+        "predicted": 249.25
       },
       {
-        "actual": 368.37,
-        "predicted": 320.29
+        "actual": 453.97,
+        "predicted": 369.07
       },
       {
-        "actual": 320.66,
-        "predicted": 245.81
+        "actual": 273.91,
+        "predicted": 225.46
       },
       {
-        "actual": 496.92,
-        "predicted": 421.06
+        "actual": 429.5,
+        "predicted": 383.32
       },
       {
-        "actual": 328.55,
-        "predicted": 279.39
+        "actual": 477.1,
+        "predicted": 404.16
       },
       {
-        "actual": 405.4,
-        "predicted": 378.88
-      },
-      {
-        "actual": 454.69,
-        "predicted": 460.85
-      },
-      {
-        "actual": 264.95,
-        "predicted": 279.09
-      },
-      {
-        "actual": 392.92,
-        "predicted": 423.43
-      },
-      {
-        "actual": 361.13,
-        "predicted": 366.27
-      },
-      {
-        "actual": 267.27,
-        "predicted": 245.81
-      },
-      {
-        "actual": 444.16,
-        "predicted": 390.74
-      },
-      {
-        "actual": 352.59,
-        "predicted": 302.57
-      },
-      {
-        "actual": 329.61,
-        "predicted": 315.49
-      },
-      {
-        "actual": 379.91,
-        "predicted": 414.14
-      },
-      {
-        "actual": 217.56,
-        "predicted": 265.86
-      },
-      {
-        "actual": 235.21,
-        "predicted": 334.64
-      },
-      {
-        "actual": 284.1,
-        "predicted": 333.83
-      },
-      {
-        "actual": 170.38,
-        "predicted": 188.99
-      },
-      {
-        "actual": 250.0,
-        "predicted": 249.13
-      },
-      {
-        "actual": 289.95,
-        "predicted": 253.91
-      },
-      {
-        "actual": 208.32,
-        "predicted": 175.54
-      },
-      {
-        "actual": 362.69,
-        "predicted": 279.41
-      },
-      {
-        "actual": 276.02,
-        "predicted": 238.57
-      },
-      {
-        "actual": 290.88,
-        "predicted": 259.07
-      },
-      {
-        "actual": 449.68,
-        "predicted": 385.37
-      },
-      {
-        "actual": 263.88,
-        "predicted": 225.44
-      },
-      {
-        "actual": 362.38,
-        "predicted": 333.66
-      },
-      {
-        "actual": 389.95,
-        "predicted": 393.97
-      },
-      {
-        "actual": 223.53,
-        "predicted": 239.16
-      },
-      {
-        "actual": 362.86,
-        "predicted": 375.8
-      },
-      {
-        "actual": 329.35,
-        "predicted": 326.6
-      },
-      {
-        "actual": 238.44,
-        "predicted": 250.53
-      },
-      {
-        "actual": 383.66,
-        "predicted": 353.86
-      },
-      {
-        "actual": 261.26,
+        "actual": 287.34,
         "predicted": 241.76
       },
       {
-        "actual": 253.33,
-        "predicted": 264.05
+        "actual": 477.71,
+        "predicted": 406.01
       },
       {
-        "actual": 390.75,
-        "predicted": 363.1
+        "actual": 395.65,
+        "predicted": 387.41
       },
       {
-        "actual": 234.98,
-        "predicted": 202.21
+        "actual": 258.74,
+        "predicted": 280.6
       },
       {
-        "actual": 292.93,
-        "predicted": 301.17
+        "actual": 417.21,
+        "predicted": 361.96
       },
       {
-        "actual": 354.23,
-        "predicted": 337.91
+        "actual": 312.89,
+        "predicted": 288.05
       },
       {
-        "actual": 238.69,
-        "predicted": 215.73
+        "actual": 326.99,
+        "predicted": 277.4
       },
       {
-        "actual": 451.14,
-        "predicted": 301.25
+        "actual": 458.18,
+        "predicted": 336.8
       },
       {
-        "actual": 385.82,
-        "predicted": 312.44
+        "actual": 303.17,
+        "predicted": 244.8
       },
       {
-        "actual": 314.52,
-        "predicted": 280.39
+        "actual": 354.66,
+        "predicted": 352.43
       },
       {
-        "actual": 404.81,
-        "predicted": 447.62
+        "actual": 368.4,
+        "predicted": 383.46
       },
       {
-        "actual": 263.28,
-        "predicted": 298.57
+        "actual": 196.54,
+        "predicted": 236.58
       },
       {
-        "actual": 300.29,
-        "predicted": 349.04
+        "actual": 245.79,
+        "predicted": 332.61
       },
       {
-        "actual": 387.85,
-        "predicted": 349.32
+        "actual": 265.1,
+        "predicted": 300.7
       },
       {
-        "actual": 209.39,
-        "predicted": 221.47
+        "actual": 168.0,
+        "predicted": 179.99
       },
       {
-        "actual": 313.42,
-        "predicted": 325.63
+        "actual": 264.65,
+        "predicted": 257.07
       },
       {
-        "actual": 341.83,
-        "predicted": 325.48
+        "actual": 270.21,
+        "predicted": 243.57
       },
       {
-        "actual": 214.29,
-        "predicted": 216.7
+        "actual": 229.29,
+        "predicted": 223.27
       },
       {
-        "actual": 358.72,
-        "predicted": 317.56
+        "actual": 374.7,
+        "predicted": 320.16
       },
       {
-        "actual": 281.08,
-        "predicted": 264.83
+        "actual": 254.19,
+        "predicted": 243.26
       },
       {
-        "actual": 219.47,
-        "predicted": 241.61
+        "actual": 296.95,
+        "predicted": 272.65
       },
       {
-        "actual": 262.25,
-        "predicted": 350.96
+        "actual": 451.32,
+        "predicted": 408.54
       },
       {
-        "actual": 208.13,
-        "predicted": 217.47
+        "actual": 263.88,
+        "predicted": 231.82
       },
       {
-        "actual": 240.61,
-        "predicted": 257.9
+        "actual": 362.38,
+        "predicted": 345.75
       },
       {
-        "actual": 327.5,
-        "predicted": 257.77
+        "actual": 395.42,
+        "predicted": 364.78
       },
       {
-        "actual": 234.04,
-        "predicted": 197.32
+        "actual": 223.92,
+        "predicted": 238.41
       },
       {
-        "actual": 358.44,
-        "predicted": 281.13
+        "actual": 356.02,
+        "predicted": 369.02
       },
       {
-        "actual": 357.14,
-        "predicted": 308.05
+        "actual": 339.8,
+        "predicted": 358.12
       },
       {
-        "actual": 267.81,
-        "predicted": 261.32
+        "actual": 225.69,
+        "predicted": 228.16
       },
       {
-        "actual": 385.57,
-        "predicted": 372.2
+        "actual": 376.47,
+        "predicted": 391.03
       },
       {
-        "actual": 303.55,
-        "predicted": 297.79
+        "actual": 288.96,
+        "predicted": 287.88
       },
       {
-        "actual": 301.92,
-        "predicted": 308.15
+        "actual": 229.82,
+        "predicted": 231.81
       },
       {
-        "actual": 372.94,
-        "predicted": 361.86
+        "actual": 382.22,
+        "predicted": 363.41
       },
       {
-        "actual": 238.75,
-        "predicted": 244.46
+        "actual": 257.64,
+        "predicted": 220.95
       },
       {
-        "actual": 326.63,
-        "predicted": 322.19
+        "actual": 266.92,
+        "predicted": 242.9
       },
       {
-        "actual": 412.5,
-        "predicted": 331.03
+        "actual": 365.17,
+        "predicted": 366.6
       },
       {
-        "actual": 235.13,
-        "predicted": 225.73
+        "actual": 237.16,
+        "predicted": 209.94
       },
       {
-        "actual": 395.36,
-        "predicted": 334.49
+        "actual": 409.52,
+        "predicted": 320.99
       },
       {
-        "actual": 325.42,
-        "predicted": 332.49
+        "actual": 436.39,
+        "predicted": 359.78
       },
       {
-        "actual": 215.85,
-        "predicted": 235.84
+        "actual": 273.83,
+        "predicted": 235.03
       },
       {
-        "actual": 359.84,
-        "predicted": 375.84
+        "actual": 440.37,
+        "predicted": 385.08
       },
       {
-        "actual": 262.14,
-        "predicted": 248.95
+        "actual": 332.06,
+        "predicted": 370.91
       },
       {
-        "actual": 221.94,
-        "predicted": 241.16
+        "actual": 248.25,
+        "predicted": 269.68
       },
       {
-        "actual": 348.69,
-        "predicted": 348.05
+        "actual": 376.79,
+        "predicted": 354.88
       },
       {
-        "actual": 214.47,
-        "predicted": 211.54
+        "actual": 261.16,
+        "predicted": 264.08
       },
       {
-        "actual": 308.49,
-        "predicted": 266.3
+        "actual": 267.51,
+        "predicted": 275.16
       },
       {
-        "actual": 307.88,
-        "predicted": 322.1
+        "actual": 381.1,
+        "predicted": 359.54
+      },
+      {
+        "actual": 222.4,
+        "predicted": 220.6
+      },
+      {
+        "actual": 313.09,
+        "predicted": 309.01
+      },
+      {
+        "actual": 350.24,
+        "predicted": 354.47
+      },
+      {
+        "actual": 203.32,
+        "predicted": 200.93
+      },
+      {
+        "actual": 272.21,
+        "predicted": 301.35
+      },
+      {
+        "actual": 254.48,
+        "predicted": 302.24
+      },
+      {
+        "actual": 193.28,
+        "predicted": 198.32
+      },
+      {
+        "actual": 306.51,
+        "predicted": 246.3
+      },
+      {
+        "actual": 286.03,
+        "predicted": 239.12
+      },
+      {
+        "actual": 291.66,
+        "predicted": 244.39
+      },
+      {
+        "actual": 390.64,
+        "predicted": 346.17
+      },
+      {
+        "actual": 274.06,
+        "predicted": 268.95
+      },
+      {
+        "actual": 333.17,
+        "predicted": 337.56
+      },
+      {
+        "actual": 385.93,
+        "predicted": 380.99
+      },
+      {
+        "actual": 250.53,
+        "predicted": 251.28
+      },
+      {
+        "actual": 340.67,
+        "predicted": 356.96
+      },
+      {
+        "actual": 343.86,
+        "predicted": 348.25
+      },
+      {
+        "actual": 227.08,
+        "predicted": 229.42
+      },
+      {
+        "actual": 374.64,
+        "predicted": 334.2
+      },
+      {
+        "actual": 368.7,
+        "predicted": 327.36
+      },
+      {
+        "actual": 258.61,
+        "predicted": 249.85
+      },
+      {
+        "actual": 412.49,
+        "predicted": 364.8
+      },
+      {
+        "actual": 273.12,
+        "predicted": 282.99
+      },
+      {
+        "actual": 244.16,
+        "predicted": 271.92
+      },
+      {
+        "actual": 369.12,
+        "predicted": 374.9
+      },
+      {
+        "actual": 230.65,
+        "predicted": 216.07
+      },
+      {
+        "actual": 249.64,
+        "predicted": 276.58
+      },
+      {
+        "actual": 348.77,
+        "predicted": 301.61
       },
       {
         "actual": 205.93,
-        "predicted": 211.55
+        "predicted": 195.25
       },
       {
-        "actual": 339.27,
-        "predicted": 316.46
+        "actual": 314.47,
+        "predicted": 314.63
       },
       {
-        "actual": 324.6,
-        "predicted": 288.67
+        "actual": 305.37,
+        "predicted": 378.84
       },
       {
-        "actual": 272.16,
-        "predicted": 244.89
+        "actual": 213.61,
+        "predicted": 228.44
       },
       {
-        "actual": 414.47,
-        "predicted": 331.28
+        "actual": 344.49,
+        "predicted": 344.78
+      },
+      {
+        "actual": 312.1,
+        "predicted": 280.13
+      },
+      {
+        "actual": 283.32,
+        "predicted": 258.52
+      },
+      {
+        "actual": 417.84,
+        "predicted": 342.45
       },
       {
         "actual": 296.94,
-        "predicted": 245.94
+        "predicted": 262.7
       }
     ]
   }

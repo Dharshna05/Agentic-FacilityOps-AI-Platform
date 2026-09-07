@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { energyService } from '../../services/energyService'
+import DataDriftBanner from '../ui/DataDriftBanner'
 
 const HORIZONS = [
   { key: '1h', label: '1H' },
@@ -91,6 +92,10 @@ export default function ForecastCard() {
               24h-ahead accuracy is limited on this dataset (only {forecast.confidence?.improvement_over_naive_pct}%
               better than a naive guess) — treat this number as directional, not precise.
             </p>
+          )}
+
+          {forecast.data_drift?.drift_detected && (
+            <DataDriftBanner drift={forecast.data_drift} subject="the currently loaded data" />
           )}
 
           <p className="font-mono text-xs text-slate-400 dark:text-slate-500 mt-2">

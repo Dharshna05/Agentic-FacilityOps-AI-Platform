@@ -1,0 +1,130 @@
+Document Date,Purchase Order No,Line Item No,Supplier ID,Supplier Name,Pro Class,Pro Class Description,Description of Goods,Service Department,Expense Area,Net Order Value,GL Code,Cost Centre
+01/07/2024,ZZH742545,1,543,Konica Minolta Business Soltns,171113,Education Library Books,Library Equipment,Corporate and Support Services,Public Libraries Gen,12348.00,400201,11329
+01/07/2024,ZSB742488,1,14834,Secure and Protect Solutions L,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to People,Highfields PRU,5131.00,200160,10329
+01/07/2024,ZZH742497,1,16322,Hulley and Kirkwood,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Corporate and Support Services,#N/A,8200.00,200123,C.11525.100
+01/07/2024,ZSB742524,1,15339,Aspen Woodwork Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to People,Highfields PRU,28905.00,200123,10329
+01/07/2024,ZSB742522,1,6190,Containers Direct,181800,Environmental Services Technical Equipment,Furniture and Equipment,Services to People,Highfields PRU,7175.00,400110,10329
+01/07/2024,ZZH742551,1,3529,Totally Local Company Ltd,240000,Horticultural,Grounds Maintenance,Services to People,Schools Contingency,19728.16,202030,10437
+02/07/2024,ZZH742580,1,6165,Rehabilitation Manufacturin,181800,Environmental Services Technical Equipment,Furniture and Equipment,Services to People,SEN Equipment,5273.70,400110,10324
+09/07/2024,ZZH742953,1,12609,Sunbelt Rentals Limited,202000,Financial Services Rents,Rents,Corporate and Support Services,Parliment&O Election,21065.00,200720,12103
+09/07/2024,ZZH742953,2,12609,Sunbelt Rentals Limited,202000,Financial Services Rents,Rents,Corporate and Support Services,Parliment&O Election,280.00,200720,12103
+09/07/2024,ZZH742908,1,5276,ESE Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Wheelie Bins,6406.45,400401,10864
+09/07/2024,ZZH742908,2,5276,ESE Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Wheelie Bins,3431.00,400401,10864
+10/07/2024,ZSB742995,1,5535,Elementary Technology Ltd,181800,Environmental Services Technical Equipment,Furniture and Equipment,Services to People,Highfields PRU,9899.00,400110,10329
+11/07/2024,ZZH743086,1,6748,GEORGE COX & SONS LTD,390000,Supplies and services,Supplies and services,Services to Place,#N/A,65185.83,401600,C.01477.203
+11/07/2024,ZZH743082,1,6748,GEORGE COX & SONS LTD,391114,"Works - Construction, Repair & Maintenance Buildings Surveys",Capital Expenditure - Fees,Services to Place,#N/A,9406.50,200316,C.01582.202
+11/07/2024,ZZH743033,1,5276,ESE Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Wheelie Bins,6763.50,400401,10864
+11/07/2024,ZZH743033,2,5276,ESE Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Wheelie Bins,4098.00,400401,10864
+12/07/2024,ZSB743102,1,16330,EDF ENERGY - Large Accounts,370000,Utilities,Utilities,Services to People,Highfields PRU,2525.80,200510,10329
+12/07/2024,ZSB743102,2,16330,EDF ENERGY - Large Accounts,370000,Utilities,Utilities,Services to People,Highfields PRU,2504.67,200510,10329
+12/07/2024,ZSB743102,3,16330,EDF ENERGY - Large Accounts,370000,Utilities,Utilities,Services to People,Highfields PRU,2244.32,200510,10329
+12/07/2024,ZSB743102,4,16330,EDF ENERGY - Large Accounts,370000,Utilities,Utilities,Services to People,Highfields PRU,68.93,200510,10329
+15/07/2024,ZZH743140,1,12068,1st Alarm Security,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to People,#N/A,12074.60,200160,C.10378.251
+16/07/2024,ZSB743210,1,14834,Secure and Protect Solutions L,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to People,Highfields PRU,5131.00,200160,10329
+16/07/2024,ZSB743210,2,14834,Secure and Protect Solutions L,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to People,Highfields PRU,1409.00,200160,10329
+16/07/2024,ZZH743227,1,10796,Exvista Business Services Ltd,191600,Facilities & Management Services Printing,Printing and Photocopying,Services to Place,Crewe-Manchester RP,3732.00,400800,10083
+16/07/2024,ZZH743227,1,10796,Exvista Business Services Ltd,191600,Facilities & Management Services Printing,Printing and Photocopying,Services to Place,South M/cr RP,3732.00,400800,10890
+16/07/2024,ZZH743227,2,10796,Exvista Business Services Ltd,191600,Facilities & Management Services Printing,Printing and Photocopying,Services to Place,Crewe-Manchester RP,150.00,400800,10083
+16/07/2024,ZZH743227,2,10796,Exvista Business Services Ltd,191600,Facilities & Management Services Printing,Printing and Photocopying,Services to Place,South M/cr RP,150.00,400800,10890
+17/07/2024,ZZH743304,1,6748,GEORGE COX & SONS LTD,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Services to Place,#N/A,150985.45,200304,C.01465.203
+17/07/2024,ZZH743280,1,8233,IPL Plastics Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Wheelie Bins,15456.00,400401,10864
+17/07/2024,ZZH743324,1,4708,The Dodd Group,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,StockportArt Gallery,9181.94,200123,11378
+18/07/2024,ZZH743362,1,10897,Three Sixty SHG Ltd,192200,Facilities & Management Services Security,Security,Services to Place,Property Client Acct,27784.72,201204,11137
+18/07/2024,ZZH743394,1,8233,IPL Plastics Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Wheelie Bins,15456.00,400401,10864
+18/07/2024,ZZH743390,1,7613,BCL Manchester,190000,Facilities & Management Services,Office Expenses,Corporate and Support Services,#N/A,6958.64,400712,C.11523.004
+22/07/2024,ZZH743515,1,14778,Bellrock Property and Facilite,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Corporate and Support Services,#N/A,147196.00,200123,C.11517
+23/07/2024,ZZH743599,1,6748,GEORGE COX & SONS LTD,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Corporate and Support Services,Public Libraries Gen,5500.00,200123,11329
+23/07/2024,ZZH743560,1,1342,UK Container Maintenance Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Bulk Container,3373.50,400401,10883
+23/07/2024,ZZH743560,2,1342,UK Container Maintenance Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Bulk Container,3373.50,400401,10883
+24/07/2024,ZZH743680,1,16341,TRP Consulting Ltd,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Corporate and Support Services,#N/A,6800.00,200311,C.11523.005
+24/07/2024,ZZH743679,1,2451,Manchester and Cheshire Constr,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Corporate and Support Services,#N/A,147196.00,200123,C.11517
+25/07/2024,ZZH743705,1,2479,JR Foy and Son Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,StockportArt Gallery,9316.80,200123,11378
+25/07/2024,ZZH743704,1,2479,JR Foy and Son Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,StockportArt Gallery,6523.20,200123,11378
+25/07/2024,ZZH743703,1,2479,JR Foy and Son Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,StockportArt Gallery,6480.00,200123,11378
+25/07/2024,ZZH743707,1,16219,City New & Used Office Furnitu,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Corporate and Support Services,#N/A,1032.00,200123,C.11523.001
+25/07/2024,ZZH743707,2,16219,City New & Used Office Furnitu,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Corporate and Support Services,#N/A,1548.00,200123,C.11523.001
+25/07/2024,ZZH743707,3,16219,City New & Used Office Furnitu,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Corporate and Support Services,#N/A,3874.00,200123,C.11523.001
+29/07/2024,ZZH743806,1,1196,SMC Premier Cleaning ltd,130000,Cleaning & Janitorial,Cleaning,Services to People,#N/A,8890.00,201602,C.10398.251
+30/07/2024,ZZH743835,1,2479,JR Foy and Son Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,StockportArt Gallery,6960.00,200123,11378
+30/07/2024,ZSB743892,1,14666,Reflex Systems Limited,181800,Environmental Services Technical Equipment,Furniture and Equipment,Services to People,Highfields PRU,5188.16,400110,10329
+31/07/2024,ZZH743928,1,14132,Integra Buildings,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to People,#N/A,182439.78,200123,C.10405.230
+01/08/2024,ZZH743978,1,1196,SMC Premier Cleaning ltd,130000,Cleaning & Janitorial,Cleaning,Services to People,#N/A,5475.00,201602,C.10398.251
+02/08/2024,ZZH744033,1,15988,Robertson Construction Group L,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to People,#N/A,1191656.16,200123,C.10398.251
+06/08/2024,ZZH744165,1,13233,MetDesk Limited,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,Gritting,6560.86,200123,12033
+06/08/2024,ZZH744150,1,843,Coating Services Ltd,390000,Supplies and services,Supplies and services,Services to Place,#N/A,9325.00,401600,C.01719.203
+06/08/2024,ZZH744159,1,843,Coating Services Ltd,390000,Supplies and services,Supplies and services,Services to Place,#N/A,16435.00,401600,C.01656.203
+07/08/2024,ZZH744187,1,3055,ATG Access Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,#N/A,16906.60,200123,C.01436.201
+07/08/2024,ZZH744187,2,3055,ATG Access Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,#N/A,16906.60,200123,C.01436.201
+07/08/2024,ZZH744187,3,3055,ATG Access Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,#N/A,24218.88,200123,C.01436.201
+07/08/2024,ZZH744187,4,3055,ATG Access Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,#N/A,24218.88,200123,C.01436.201
+07/08/2024,ZZH744199,1,15428,TMT Commercial Contractors,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Corporate and Support Services,#N/A,373950.80,200123,C.11504.013
+07/08/2024,ZZH744244,1,15251,Ground Inc limited,240000,Horticultural,Grounds Maintenance,Services to Place,#N/A,35269.25,202032,C.10775
+08/08/2024,ZZH744301,1,8106,Tarmac Trading Ltd,390000,Supplies and services,Supplies and services,Services to Place,#N/A,58523.04,401600,C.01626.203
+09/08/2024,ZZH744351,1,14669,Sapphire Utility Solutions Ltd,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Services to Place,#N/A,13000.00,200304,C.01248.203
+09/08/2024,ZZH744351,2,14669,Sapphire Utility Solutions Ltd,230000,Highway Equipment & Materials,Highways Maintenance,Services to Place,Drainage Works,10313.00,202052,12681
+12/08/2024,ZZH744372,1,8832,Safe and Secure Solutions Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to People,#N/A,18144.00,200160,C.10423.184
+12/08/2024,ZZH744420,1,1222,Horticon Ltd,240000,Horticultural,Grounds Maintenance,Services to Place,#N/A,60649.04,202032,C.10775
+13/08/2024,ZZH744425,1,16353,Last Drop Village Hotel & Spa,190000,Facilities & Management Services,Office Expenses,Services to People,SC - NW Strategic Sa,7380.00,400705,11491
+14/08/2024,ZZH744478,1,2479,JR Foy and Son Ltd,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Corporate and Support Services,#N/A,6981.52,200311,C.11523.004
+16/08/2024,ZZH744580,1,3529,Totally Local Company Ltd,390000,Supplies and services,Supplies and services,Services to Place,Emergency Tree Works,53252.00,401600,11168
+16/08/2024,ZZH744581,1,3529,Totally Local Company Ltd,390000,Supplies and services,Supplies and services,Services to Place,Emergency Tree Works,83723.00,401600,11168
+16/08/2024,ZZH744582,1,3529,Totally Local Company Ltd,390000,Supplies and services,Supplies and services,Services to Place,Emergency Tree Works,43128.00,401600,11168
+16/08/2024,ZZH744602,1,5464,ELECTRICITY NORTH WEST LIMITED,230000,Highway Equipment & Materials,Highways Maintenance,Services to Place,#N/A,41943.36,202055,C.01615.202
+19/08/2024,ZZH744644,1,1342,UK Container Maintenance Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Bulk Container,6357.00,400401,10883
+19/08/2024,ZZH744664,1,3529,Totally Local Company Ltd,390000,Supplies and services,Supplies and services,Services to Place,Emergency Tree Works,190860.00,401600,11168
+20/08/2024,ZSB744691,1,14666,Reflex Systems Limited,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to People,Highfields PRU,5188.16,200123,10329
+21/08/2024,ZZH744783,1,3529,Totally Local Company Ltd,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Services to Place,Highway Structs R+R,6520.00,200304,11975
+21/08/2024,ZZH744795,1,1342,UK Container Maintenance Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Bulk Container,4279.00,400401,10883
+21/08/2024,ZZH744795,2,1342,UK Container Maintenance Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Bulk Container,2917.50,400401,10883
+21/08/2024,ZZH744795,3,1342,UK Container Maintenance Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Bulk Container,389.00,400401,10883
+21/08/2024,ZZH744795,4,1342,UK Container Maintenance Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Bulk Container,290.00,400401,10883
+21/08/2024,ZZH744795,5,1342,UK Container Maintenance Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Bulk Container,2595.00,400401,10883
+22/08/2024,ZZH744864,1,8233,IPL Plastics Ltd,182020,Environmental Services Waste Management,Waste Management Equipment,Services to Place,Wheelie Bins,15456.00,400401,10864
+23/08/2024,ZZH744884,1,11973,Virgin Media Ltd,230000,Highway Equipment & Materials,Highways Maintenance,Services to Place,#N/A,5965.43,202055,C.01511.202
+23/08/2024,ZZH744901,1,5835,Virgin Media Access Network Pl,230000,Highway Equipment & Materials,Highways Maintenance,Services to Place,#N/A,30296.09,202055,C.01582.202
+28/08/2024,ZZH744982,1,5464,ELECTRICITY NORTH WEST LIMITED,230000,Highway Equipment & Materials,Highways Maintenance,Services to Place,#N/A,41943.36,202055,C.01615.202
+28/08/2024,ZFC744988,1,10897,Three Sixty SHG Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,SPB Operational Est.,30000.00,200101,11662
+29/08/2024,ZZH745022,1,4482,Waste Solutions SK Ltd,182000,Environmental Services Waste Management,Waste Management,Corporate and Support Services,Public Libraries Gen,6500.00,201803,11329
+30/08/2024,ZZH745060,1,2398,Fibrelite (Northwest) Ltd,192200,Facilities & Management Services Security,Security,Services to Place,Property Client Acct,5850.00,201204,11137
+02/09/2024,ZZC745105,1,9891,Link Maker Systems Ltd.,390000,"Works - Construction, Repair & Maintenance",Fees and Charges,Services to People,RAA Adoption Count,50991.02,401017,12957
+04/09/2024,ZZH745220,1,7889,Thomas Kershaw Builders,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,StockportArt Gallery,6160.00,200123,11378
+04/09/2024,ZZH745220,2,7889,Thomas Kershaw Builders,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,StockportArt Gallery,6310.00,200123,11378
+05/09/2024,ZZH745252,1,3529,Totally Local Company Ltd,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Services to Place,Emergency Tree Works,82933.00,401600,11168
+05/09/2024,ZZH745248,1,843,Coating Services Ltd,390000,Supplies and services,Supplies and services,Services to Place,#N/A,14845.00,401600,C.01702.203
+06/09/2024,ZSB745296,1,16330,EDF ENERGY - Large Accounts,370000,Utilities,Utilities,Services to People,Highfields PRU,376.52,200510,10329
+06/09/2024,ZSB745296,2,16330,EDF ENERGY - Large Accounts,370000,Utilities,Utilities,Services to People,Highfields PRU,2569.55,200510,10329
+06/09/2024,ZSB745296,3,16330,EDF ENERGY - Large Accounts,370000,Utilities,Utilities,Services to People,Highfields PRU,2463.26,200510,10329
+06/09/2024,ZSB745296,4,16330,EDF ENERGY - Large Accounts,370000,Utilities,Utilities,Services to People,Highfields PRU,1565.57,200510,10329
+09/09/2024,ZTR745375,1,11014,Flowbird Smart City UK Limited,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,Car Parks Admin,62700.00,200123,10005
+09/09/2024,ZZH745390,1,7889,Thomas Kershaw Builders,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,StockportArt Gallery,6160.00,200123,11378
+10/09/2024,ZZH745431,1,3529,Totally Local Company Ltd,290000,Arts & Leisure Services,Publicity and Promotion,Services to Place,Borough Festive Ligh,40080.00,401801,12654
+10/09/2024,ZZH745477,1,12200,Cadent Gas Limited,230000,Highway Equipment & Materials,Highways Maintenance,Services to Place,#N/A,39630.23,202055,C.01615.202
+11/09/2024,ZZH745490,1,15251,Ground Inc limited,240000,Horticultural,Grounds Maintenance,Services to Place,#N/A,9720.00,202032,C.10775
+11/09/2024,ZZH745492,1,7889,Thomas Kershaw Builders,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to Place,StockportArt Gallery,6310.00,200123,11378
+11/09/2024,ZZH745496,1,843,Coating Services Ltd,390000,Supplies and services,Supplies and services,Services to Place,#N/A,8635.00,401600,C.01221.203
+12/09/2024,ZZH745603,1,3529,Totally Local Company Ltd,181800,Environmental Services Technical Equipment,Furniture and Equipment,Services to Place,Emergency Tree Works,9570.00,400110,11168
+13/09/2024,ZZH745680,1,3529,Totally Local Company Ltd,181600,Environmental Services Street Cleansing,Cleaning,Services to Place,Drainage Works,100000.00,201606,12681
+13/09/2024,ZZH745669,1,3529,Totally Local Company Ltd,181800,Environmental Services Technical Equipment,Furniture and Equipment,Services to Place,Emergency Tree Works,5480.00,400110,11168
+17/09/2024,ZZH745773,1,6967,Wilde Consultants Ltd,390000,"Works - Construction, Repair & Maintenance",Repairs and Maintenance,Services to People,#N/A,19967.50,200123,C.10398.251
+18/09/2024,ZZH745826,1,8646,MPH INSPECTION SERVICES,350000,Street & Traffic Management,Fixtures and Fittings,Services to Place,Struc Test of Column,12578.00,201202,11995
+18/09/2024,ZZH745826,2,8646,MPH INSPECTION SERVICES,350000,Street & Traffic Management,Fixtures and Fittings,Services to Place,Struc Test of Column,6811.50,201202,11995
+18/09/2024,ZZH745826,3,8646,MPH INSPECTION SERVICES,350000,Street & Traffic Management,Fixtures and Fittings,Services to Place,Struc Test of Column,4352.25,201202,11995
+19/09/2024,ZZH745885,1,3529,Totally Local Company Ltd,390000,Supplies and services,Supplies and services,Services to Place,#N/A,36119.07,401600,C.01505.203
+19/09/2024,ZAV745924,1,35,CBC Computer Systems Ltd,181800,Environmental Services Technical Equipment,Furniture and Equipment,Corporate and Support Services,IT AVA Non - SLA,2175.00,400110,13001
+20/09/2024,ZZH745947,1,16092,Black Cat Building Consultancy,391114,"Works - Construction, Repair & Maintenance Buildings Surveys",Capital Expenditure - Fees,Corporate and Support Services,#N/A,6500.00,200316,C.11523.005
+20/09/2024,ZZH745946,1,16092,Black Cat Building Consultancy,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Corporate and Support Services,#N/A,8500.00,200311,C.11523.005
+20/09/2024,ZZH745945,1,16092,Black Cat Building Consultancy,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Corporate and Support Services,#N/A,8500.00,200311,C.11523.005
+24/09/2024,ZZH746060,1,3529,Totally Local Company Ltd,290000,Arts & Leisure Services,Publicity and Promotion,Services to Place,Borough Festive Ligh,79245.27,401801,12654
+24/09/2024,ZZH746074,1,16423,Tilbury Douglas Construction L,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Corporate and Support Services,#N/A,244139.70,200311,C.11523.001
+24/09/2024,ZSB746069,1,15012,OM Property UK Limited,202000,Financial Services Rents,Rents,Services to People,Highfields PRU,6020.00,200703,10329
+25/09/2024,ZZH746128,1,35,CBC Computer Systems Ltd,270000,Information Communication Technology,Information and Communications Technology,Corporate and Support Services,IT Infrastructure,1498.50,402001,11324
+26/09/2024,ZZH746174,1,3290,Royal Mail,300000,Mail Services,Office Expenses,Corporate and Support Services,Mailroom Service,30000.00,400711,11152
+26/09/2024,ZZS746176,1,9011,Tonetec Limited,190000,Facilities & Management Services,Office Expenses,Corporate and Support Services,U-Coroners Ct-Genera,1295.00,400712,10965
+26/09/2024,ZZS746176,2,9011,Tonetec Limited,190000,Facilities & Management Services,Office Expenses,Corporate and Support Services,U-Coroners Ct-Genera,455.00,400712,10965
+27/09/2024,ZZH746214,1,9973,Truline Construction & Interio,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Corporate and Support Services,#N/A,358718.16,200311,C.11523.002
+27/09/2024,ZZH746215,1,9973,Truline Construction & Interio,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Corporate and Support Services,#N/A,229033.03,200311,C.11523.003
+27/09/2024,ZZH746232,1,6748,GEORGE COX & SONS LTD,390000,Supplies and services,Supplies and services,Services to Place,#N/A,12739.88,401600,C.01505.203
+30/09/2024,ZZH746283,1,14951,TERMSTALL LTD,240000,Horticultural,Grounds Maintenance,Services to Place,#N/A,8980.00,202032,C.10775
+30/09/2024,ZZH746306,1,6748,GEORGE COX & SONS LTD,390000,"Works - Construction, Repair & Maintenance",Capital Expenditure - Works,Services to Place,#N/A,6864.26,200304,C.01652.203
+30/09/2024,ZZH746304,1,2025,BT Plc (Openreach),230000,Highway Equipment & Materials,Highways Maintenance,Services to Place,#N/A,6195.60,202055,C.01606.202
+30/09/2024,ZZH746329,1,843,Coating Services Ltd,390000,Supplies and services,Supplies and services,Services to Place,#N/A,17325.00,401600,C.01700.203

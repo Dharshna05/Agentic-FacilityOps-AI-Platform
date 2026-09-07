@@ -62,7 +62,7 @@ class MaintenanceEvent(Base):
     A maintenance alert / work order. Created either by the Maintenance
     Agent's own rule+ML engine, OR by a cross-agent handoff (the Energy
     Agent's flag_for_maintenance_review tool calling
-    maintenance_service.open_work_order for real — see ARCHITECTURE.md).
+    maintenance_service.open_work_order for real).
     `source` records which agent actually created it, so the handoff is
     auditable rather than just implied.
     """

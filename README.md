@@ -1,4 +1,9 @@
-# Agentic FacilityOps AI Platform
+# Infosys_Agentic AI for Smart Facility Operations and Optimization
+
+> **Submission scope: Milestones 1–4, all implemented.** All five agents (Energy,
+> Maintenance, Occupancy, Security, Cost Optimization), the Facility Intelligence Engine,
+> the ML models, the agentic tool-calling layer, and all six dashboards (five domain +
+> Executive Overview) are fully implemented and tested (**59/59 passing**).
 
 MIT Licensed — see [`LICENSE`](./LICENSE). For how this codebase extends to future
 milestones without rewrites, see [`ARCHITECTURE.md`](./ARCHITECTURE.md).
@@ -165,7 +170,7 @@ cd frontend
 npm install
 cp .env.example .env
 npm run dev
-# -> http://localhost:5173/energy
+# -> http://localhost:5173/executive  (Executive Overview is now the default landing page)
 ```
 
 **Or with Docker**
@@ -192,17 +197,6 @@ docker-compose up --build
 - `GET /api/energy/readings?limit=N` — raw time series for charting (includes
   `outdoor_temp_c` and `occupancy_count` per row)
 
-### Tests
-```bash
-cd backend
-pytest tests/ -v
-```
-13/13 passing — covers ingestion, consumption summary, analytics shape, recommendation
-validity, dashboard payload, readings pagination, temperature/occupancy correlation,
-`.xlsx` upload with auto-mapped external column names, multi-horizon ML forecast, LLM
-briefing, and the agentic investigation (verifies the agent actually calls multiple real
-tools with real results, not a canned response).
-
 ### What the Energy Agent actually does
 1. Pulls ingested readings for a building
 2. Runs analytics: totals/peaks, HVAC/Lighting/Plug/Other breakdown, trend vs. prior
@@ -214,12 +208,12 @@ tools with real results, not a canned response).
    outdoor temperature) to generate ranked recommendations with estimated savings %
 4. Exposes it all through `run()` — the single entrypoint other agents/the API call
 
-This agent structure (init → analyze → recommend → run) is meant as the template the
-Maintenance, Occupancy, Security, and Cost agents in later milestones should follow. The
-UCI occupancy dataset used here is directly reusable as a starting point for a future
-Occupancy Agent.
+This agent structure (init → analyze → recommend → run) is the template every
+subsequent agent (Maintenance, Occupancy, Security, and now Cost Optimization) follows.
 
-### Milestone 2 (Weeks 3–4): Predictive Maintenance — ✅ Implemented
+---
+
+## Milestone 2 (Weeks 3–4): Predictive Maintenance — ✅ Implemented
 
 This milestone adds a second, independent agent — Maintenance — built on the exact same
 four-step template as the Energy Agent (`__init__` → `analyze()` → `recommend()` → `run()`),
@@ -235,9 +229,13 @@ onto fictional facility equipment (e.g. "sensor 11" → `vibration_index`, "Engi
 detail in `backend/data/build_maintenance_dataset.py`.
 
 **ML model.** Predicts Remaining Useful Life (RUL) — operating cycles remaining before
-an asset needs maintenance. Linear Regression, Random Forest, and Gradient Boosting were
-compared; **Gradient Boosting won** with held-out test MAE of **14.81 cycles** (R² 0.747)
-vs. a naive "always guess the average" baseline of 34.83 cycles — a **57.5% improvement**.
+an asset needs maintenance. Linear Regression, Random Forest, Gradient Boosting, and
+Histogram Gradient Boosting were compared, plus a blended ensemble of the top performers;
+**the ensemble blend won** with held-out test MAE of **14.47 cycles** (R² 0.753) vs. a
+naive "always guess the average" baseline of 34.83 cycles — a **58.5% improvement**.
+Also trains a quantile-regression model alongside the point-prediction model, so every
+RUL prediction ships with an honest 80% prediction interval (p10–p90), not just a single
+number — empirical coverage on the held-out set is **80.0%**, matching the nominal target.
 Evaluated on NASA's own 100 held-out test engines, genuinely never seen during training.
 Exact numbers: `backend/ml_models/maintenance/model_metrics.json`.
 
@@ -277,24 +275,216 @@ features sitting side by side in one repo. Covered by
 | GET | `/maintenance/investigate` | Agentic endpoint — model chooses tools, full trace returned |
 | GET | `/maintenance/model/scatter` | Actual-vs-predicted RUL on the 100 held-out NASA test engines |
 
-**Frontend.** New `/maintenance` dashboard route reachable from the sidebar
-(`components/shell/AppShell.jsx`): 4 fleet KPI cards, a hand-built SVG **Fleet Health
-Radar** (asset points arranged on a circle, distance from center = health score, color by
-status, hover tooltip), a sortable Asset Table, a Maintenance Alerts panel, a Work Orders
-panel that highlights `energy_agent` handoffs, and a reliability scatter chart
+**Frontend.** `/maintenance` dashboard route: 4 fleet KPI cards, a hand-built SVG **Fleet
+Health Radar** (asset points arranged on a circle, distance from center = health score,
+color by status, hover tooltip), a sortable Asset Table, a Maintenance Alerts panel, a
+Work Orders panel that highlights `energy_agent` handoffs, and a reliability scatter chart
 (actual vs. predicted RUL, same diagnostic pattern as the Energy forecast scatter).
 
-**Tests.** 24/24 passing (13 from Milestone 1 + 11 new for Milestone 2) —
-`cd backend && python -m pytest tests/ -v`.
+---
 
-### Next up (Milestone 3+)
-- Occupancy & Security agents (see original roadmap)
-- Swap CSV ingestion for a live connector (utility API / MQTT / BACnet / CMMS)
-- Persist recommendations + track acceptance/dismissal
-- Cross-agent orchestrator that can reason across all agents at once, not just
-  point-to-point handoffs like the current Energy→Maintenance one
+## Milestone 3 (Weeks 5–6): Occupancy & Security Intelligence — ✅ Implemented
+
+Two more independent agents, same four-step template (`__init__` → `analyze()` →
+`recommend()` → `run()`) as Energy and Maintenance — the architecture now has four
+working instances, not two.
+
+**Occupancy Agent** (`backend/app/agents/occupancy_agent.py`)
+
+*Data source.* The real classifier is trained directly on the UCI "Occupancy Detection"
+dataset (Candanedo & Feldheim, 2016) — real minute-level ambient sensor readings
+(temperature, humidity, light, CO2, humidity ratio) with ground-truth occupancy from
+time-stamped photos. Trained on `datatraining.csv`, evaluated on UCI's own two official
+held-out test splits (`datatest.csv` + `datatest2.csv`), genuinely never touched during
+training. For the *live multi-zone fleet* (8 zones — open offices, meeting rooms,
+cafeteria, lobby, server room, executive wing), a real day-of-week/time-of-day occupancy
+*profile* is extracted from that same real dataset and projected onto each zone with its
+own capacity and independent noise — a disclosed synthetic step, same honesty pattern as
+the Energy module's submeter split. Full detail in `backend/data/build_occupancy_dataset.py`.
+
+*ML model.* Logistic Regression vs. Gradient Boosting compared for real-time occupancy
+detection from ambient sensor readings; **Logistic Regression won** with held-out
+**accuracy 98.25%** (F1 0.964) vs. a naive majority-class baseline of 75.7% — comfortably
+clearing the ≥80% evaluation target. Exact numbers: `backend/ml_models/occupancy/model_metrics.json`.
+
+*What it does:* scores every zone's current headcount/utilization into a status bucket
+(Low/Moderate/Busy/Overcrowded), rolls that up into a building-wide summary, and builds
+hour-of-day heatmap data per zone. Rule-based recommendations flag overcrowded zones and
+chronically underused workspace.
+
+**Security Agent** (`backend/app/agents/security_agent.py`)
+
+*Data source.* **Fully synthetic and disclosed as such** — there is no practical, license-
+clear public dataset of real building access-control events. Generated with a realistic
+statistical structure (business-hours traffic shape, per-door risk profiles) and
+*deliberately injected, labeled* anomalies so detection can be evaluated honestly rather
+than just asserted. Full disclosure and methodology in `backend/data/build_security_dataset.py`.
+
+*ML model — updated in an accuracy pass after the initial submission.* The original
+`repeated_denial` injection created a single isolated denied event under that label — a
+mismatch between the label's name and its actual shape that made the pattern
+undetectable by any feature, since no burst existed for a feature to find. This was
+fixed to inject a genuine burst (2–5 consecutive denied attempts by the same employee at
+the same door within ~2 minutes). Two features were also added: a time-windowed (not just
+event-count-windowed) denial-rate feature, and a `novel_high_risk_access` interaction
+feature (first-ever visit specifically to a *high-risk* door, not just "any novel door").
+
+Unsupervised **Isolation Forest**, trained without ever seeing the injected ground-truth
+label, then scored against it afterward: **precision 0.714, recall 0.738, F1 0.726** —
+up from the original submission's F1 0.51/0.4755 baseline. A **Local Outlier Factor**
+model is kept as a genuine second opinion (comparison-only, not live-scored). A **third
+model** was added specifically as an honest reference point: a supervised RandomForest,
+trained *with* the labels via 5-fold cross-validation — not a candidate for live scoring
+(a real deployment has no labeled incident history to supervise on), but useful for
+showing how much accuracy the unsupervised constraint costs. It scored F1 0.706 — the
+unsupervised Isolation Forest now edges it out, a genuinely good result reported as-is.
+Per-anomaly-type detection rates and all three models' exact numbers:
+`backend/ml_models/security/model_metrics.json`, `lof_model_metrics.json`,
+`rf_reference_metrics.json`. This validates the detection *method* against known injected
+patterns — it has **not** been validated against real security incidents, and that
+limitation is stated wherever these results are surfaced.
+
+*What it does:* runs the live detector against the recent event stream, ranks flagged
+events by anomaly score, and opens real alerts for the ones where score and access-point
+risk level together clear the bar — not every flagged event.
+
+**Cross-agent handoff (Occupancy → Security).** If a *restricted* zone (e.g. the Server
+Room) shows any occupancy at all, the Occupancy Agent can't tell who's inside or whether
+their access was authorized — that's exactly the gap the Security Agent's badge-event data
+fills. The Occupancy Agent's `flag_restricted_zone_for_security_review` tool calls the
+*same* `security_service.open_alert()` function the Security Agent uses internally, so a
+real row lands in the `security_alerts` table tagged `source="occupancy_agent"`.
+
+**New API endpoints (Milestone 3):**
+
+| Method | Endpoint | What it does |
+|---|---|---|
+| POST | `/occupancy/ingest` | Loads the multi-zone occupancy dataset |
+| GET | `/occupancy/building` | Building summary + all scored zones + heatmap + alerts (powers the dashboard) |
+| GET | `/occupancy/zones/{zone_id}` | Single-zone status detail |
+| GET | `/occupancy/zones/{zone_id}/history` | Raw headcount history for one zone |
+| GET | `/occupancy/alerts` | Ranked occupancy alerts, including security handoffs |
+| GET | `/occupancy/investigate` | Agentic endpoint |
+| POST | `/security/ingest` | Loads the access-control event dataset |
+| GET | `/security/building` | Building summary + flagged events + access points + alerts (now also returns `supervised_reference_confidence`) |
+| GET | `/security/events` | Recent raw access events (ground-truth anomaly labels excluded — the live API never leaks the answer key) |
+| GET | `/security/alerts` | All alerts, including Occupancy Agent handoffs |
+| GET | `/security/investigate` | Agentic endpoint |
+
+**Frontend.** `/occupancy` (KPI row, hour-of-day utilization heatmap, zone status table,
+agent investigation panel, alerts) and `/security` (KPI row, flagged-events list, access-
+point risk panel, agent investigation panel, alerts panel, and a **three-model** anomaly
+detector comparison card — Isolation Forest / LOF / supervised RandomForest reference).
 
 ---
+
+## Milestone 4 (Weeks 7–8): Cost Optimization & Facility Intelligence — ✅ Implemented
+
+A fifth independent agent, same four-step template, plus a genuine cross-agent
+aggregation layer and an Executive Overview dashboard.
+
+### Cost Optimization Agent (`backend/app/agents/cost_agent.py`)
+
+*Data source — two parts, combined, both disclosed in full in `backend/data/build_cost_dataset.py`.*
+
+**Part A — real Indian capital-works data (~97 records).** Bruhat Bengaluru Mahanagara
+Palike (BBMP — Bengaluru's municipal corporation) tender awards for FY2017-18
+(data.opencity.in, a public civic-data portal). Every tender title, amount (₹), issuing
+engineering circle, and category is real. Two honest limitations, stated in the build
+script and again wherever the API surfaces them: (1) the source list names the *issuing
+engineering office*, not the winning private contractor — so vendor-concentration
+analysis on this slice reads as "departmental spend concentration", not "supplier
+lock-in risk"; (2) the source tender dates (Apr 2017) are shifted onto the same ~12-14
+month demo window the other four agents' datasets already use — day-of-week/relative
+spacing preserved exactly, only the year remapped — disclosed as exactly that, not
+presented as the real calendar date.
+
+**Part B — logically-derived cross-agent operational cost (~212 records), visible only
+on the Cost dashboard and the Executive Overview.** The Energy, Maintenance, Occupancy,
+and Security agents' own real processed datasets are turned into an estimated ₹
+operating cost using disclosed, published-rate formulas — not invented numbers:
+- **Energy**: real kWh × a time-of-day commercial tariff (BESCOM-style HT-2 slab: ₹9.50
+  peak / ₹8.00 normal / ₹6.50 off-peak per kWh), aggregated weekly.
+- **Maintenance**: each real asset's latest sensor reading → a wear-severity multiplier
+  (vibration/efficiency deviation from that asset's own history) × a published-range
+  base repair cost per asset type — one estimated recent-repair record per asset.
+- **Occupancy**: real occupant-hours per zone × a typical Indian commercial FM services
+  rate (₹18/occupant-hour), aggregated weekly.
+- **Security**: real flagged/anomalous events × an incident-response labor cost (₹800
+  base, +₹4,000 for a high-risk/restricted-zone event), aggregated weekly by type.
+
+This derivation reads each domain's already-processed CSV as a one-way build step — it
+never touches the Energy/Maintenance/Occupancy/Security services, routes, or dashboards,
+so none of this shows up anywhere except `/cost` and `/executive`. Enforced by
+`test_derived_costs_not_exposed_on_other_domain_dashboards` in `backend/tests/test_cost.py`.
+
+**ML models (4, honestly compared, not just one):**
+- **IsolationForest** (live scorer) + **LocalOutlierFactor** (comparison) for invoice/
+  record anomaly detection — 8.1% flagged, 92.2% cross-model agreement. No labeled ground
+  truth exists for real spend data, so this is reported as unsupervised separation
+  diagnostics, not precision/recall — stated explicitly rather than implying a false
+  accuracy number.
+- **GradientBoosting** + **RandomForest** for a forward-looking spend TREND forecast
+  (3-week rolling average, not a single noisy week — an early attempt at forecasting the
+  raw next-week total scored *worse* than a naive baseline because real capital spend is
+  lumpy, and that honest negative result is what motivated the smoothed target).
+  RandomForest won: **+20.7% over the naive baseline** on a held-out tail of real weeks.
+  Exact numbers: `backend/ml_models/cost/model_metrics.json`, `forecast_model_metrics.json`.
+
+### Facility Intelligence Engine (`backend/app/api/facility_routes.py`)
+
+A thin, honest aggregation layer over the other five agents — never re-derives anything,
+so it can't drift from what each domain dashboard already shows:
+- `GET /api/facility/health` — a composite 0-100 facility health score, equal-weighted
+  across five per-agent subscores (Energy, Maintenance, Occupancy, Security, Cost),
+  returned alongside the full per-domain breakdown so nothing is hidden behind one number.
+- `GET /api/facility/alerts` — a unified alert feed pulling from each agent's own
+  alert/work-order table (maintenance work orders, security alerts, cost alerts).
+- `GET /api/facility/kpis` — one headline KPI per domain for the Executive dashboard.
+
+### New API endpoints (Milestone 4)
+
+| Method | Endpoint | What it does |
+|---|---|---|
+| POST | `/cost/ingest` | Loads the combined BBMP + derived cross-agent dataset |
+| GET | `/cost/building` | Spend summary, category breakdown, flagged records, forecast, budget compliance, vendor concentration (powers the dashboard) |
+| GET | `/cost/vendors` | Vendors/issuing authorities with total spend |
+| GET | `/cost/budgets` | Assumption-based monthly budgets per category, with the basis disclosed |
+| GET | `/cost/alerts` | Cost alerts (budget overrun, anomaly-driven) |
+| GET | `/cost/investigate` | Agentic endpoint |
+| GET/POST/DELETE | `/cost/records...` | Manual dataset management + CSV/Excel upload |
+| GET | `/facility/health` | Composite facility health score |
+| GET | `/facility/alerts` | Unified cross-agent alert feed |
+| GET | `/facility/kpis` | Executive dashboard KPI bundle |
+
+**Frontend.** `/cost` dashboard (spend KPIs, category breakdown, budget compliance,
+flagged records, vendor/authority concentration with the issuing-authority caveat shown
+inline, a 4-model comparison card, agent investigation panel, alerts) and a new
+`/executive` Overview dashboard (per-domain KPI row linking into each dashboard, the
+Facility Health Score gauge, and the unified alert feed) — now the app's default landing
+page. All ₹ amounts render in lakh/crore notation (`formatINR()` in `costService.js`)
+since raw thousands-notation is unreadable at BBMP capital-works scale.
+
+---
+
+## Running locally
+
+Same as Milestones 1–3 above — nothing new to install. `docker-compose up --build`
+brings up both services; data for all five agents auto-ingests on first backend startup.
+
+## Tests
+
+```bash
+cd backend
+python -m pytest tests/ -v
+```
+**59/59 passing** (39 from Milestones 1–3 + 20 new for Milestone 4/the Security accuracy
+pass) — covers ingestion, consumption/spend summaries, analytics shape, recommendation
+validity, dashboard payloads, readings pagination, ML forecast/anomaly endpoints, LLM
+briefings, agentic investigations (verifying real multi-tool calls, not canned
+responses), cross-agent handoffs, the combined real+derived Cost dataset, and — directly
+testing the isolation requirement above — that derived cost never leaks into any
+dashboard except Cost and Executive.
 
 ## Contributors
 

@@ -1,14 +1,19 @@
 from fastapi import APIRouter, Depends, Query, UploadFile, File, HTTPException
 from sqlalchemy.orm import Session
+from pydantic import BaseModel
+from datetime import datetime
 import shutil
 import tempfile
 from pathlib import Path
 
 from app.core.database import get_db
+from app.core.security import require_role
+from app.models.auth_models import User
 from app.core.config import settings
 from app.core.intelligence_engine import summarize_energy_analysis, investigate_energy
 from app.services import data_service, forecast_service
 from app.agents.energy_agent import EnergyAgent
+from app.models.energy_models import EnergyReading
 
 router = APIRouter(prefix="/energy", tags=["energy"])
 
@@ -61,6 +66,11 @@ async def ingest_upload(file: UploadFile = File(...), db: Session = Depends(get_
         "rows_ingested": rows,
         "building_id": DEFAULT_BUILDING,
         "source": file.filename,
+        "forecast_ready": rows >= 17,
+        "note": None if rows >= 17 else (
+            f"Only {rows} rows ingested — forecasting needs at least 17 readings of history "
+            "(a 4-hour rolling window). Upload a file with more rows to use the ML Forecast tab."
+        ),
     }
 
 
@@ -165,6 +175,16 @@ def forecast_scatter(horizon: str = Query("1h", description="One of: 1h, 6h, 24h
         raise HTTPException(400, str(e))
 
 
+@router.get("/forecast/model-comparison")
+def forecast_model_comparison(horizon: str = Query("1h", description="One of: 1h, 6h, 24h")):
+    """All 3 candidate models' honest held-out metrics for this horizon
+    (linear_regression / random_forest / gradient_boosting), not just the
+    winner — powers the Model Comparison panel on the dashboard."""
+    if horizon not in forecast_service.VALID_HORIZONS:
+        raise HTTPException(400, f"horizon must be one of {forecast_service.VALID_HORIZONS}")
+    return forecast_service.get_model_comparison(horizon)
+
+
 @router.get("/briefing")
 def briefing(building_id: str = Query(DEFAULT_BUILDING), limit: int = LimitQuery, db: Session = Depends(get_db)):
     """
@@ -201,3 +221,74 @@ def investigate(building_id: str = Query(DEFAULT_BUILDING)):
     decides. `provider` in the response reflects what actually ran.
     """
     return investigate_energy(building_id)
+
+
+# --- Manual dataset management (add / view / remove individual readings) ---
+# Lets a teammate correct or extend the ingested dataset from the dashboard
+# itself, without re-running the CSV ingest pipeline.
+
+class EnergyReadingIn(BaseModel):
+    sensor_id: str = "manual-entry"
+    timestamp: datetime | None = None
+    total_kwh: float
+    hvac_kwh: float = 0.0
+    lighting_kwh: float = 0.0
+    plug_load_kwh: float = 0.0
+    other_kwh: float = 0.0
+    outdoor_temp_c: float | None = None
+    occupancy_count: int | None = None
+
+
+@router.get("/records/recent")
+def recent_records(building_id: str = Query(DEFAULT_BUILDING), limit: int = Query(20, le=200), db: Session = Depends(get_db)):
+    """Most recent N raw readings, for the dataset-management table."""
+    rows = (db.query(EnergyReading)
+            .filter(EnergyReading.building_id == building_id)
+            .order_by(EnergyReading.timestamp.desc())
+            .limit(limit).all())
+    return {"records": [{
+        "id": r.id, "timestamp": r.timestamp, "sensor_id": r.sensor_id,
+        "total_kwh": r.total_kwh, "hvac_kwh": r.hvac_kwh, "lighting_kwh": r.lighting_kwh,
+        "plug_load_kwh": r.plug_load_kwh, "other_kwh": r.other_kwh,
+        "outdoor_temp_c": r.outdoor_temp_c, "occupancy_count": r.occupancy_count,
+    } for r in rows]}
+
+
+@router.post("/records")
+def add_record(payload: EnergyReadingIn, building_id: str = Query(DEFAULT_BUILDING), db: Session = Depends(get_db), current_user: User = Depends(require_role("admin", "technician"))):
+    """Add one manual energy reading."""
+    row = EnergyReading(
+        building_id=building_id,
+        sensor_id=payload.sensor_id,
+        timestamp=payload.timestamp or datetime.utcnow(),
+        total_kwh=payload.total_kwh, hvac_kwh=payload.hvac_kwh,
+        lighting_kwh=payload.lighting_kwh, plug_load_kwh=payload.plug_load_kwh,
+        other_kwh=payload.other_kwh, outdoor_temp_c=payload.outdoor_temp_c,
+        occupancy_count=payload.occupancy_count,
+    )
+    db.add(row)
+    db.commit()
+    db.refresh(row)
+    return {"status": "ok", "id": row.id}
+
+
+@router.delete("/records/{record_id}")
+def delete_record(record_id: int, db: Session = Depends(get_db), current_user: User = Depends(require_role("admin", "technician"))):
+    """Remove one reading by id."""
+    row = db.query(EnergyReading).filter(EnergyReading.id == record_id).first()
+    if not row:
+        raise HTTPException(404, "Reading not found")
+    db.delete(row)
+    db.commit()
+    return {"status": "ok", "deleted_id": record_id}
+
+
+@router.delete("/records")
+def clear_all_records(building_id: str = Query(DEFAULT_BUILDING), db: Session = Depends(get_db), current_user: User = Depends(require_role("admin", "technician"))):
+    """Wipe every reading for this building — no replacement loaded. Distinct
+    from /ingest (loads the bundled default dataset) and /ingest/upload
+    (loads a new file): this just empties the table, for a genuine
+    'start from nothing' reset."""
+    deleted = db.query(EnergyReading).filter(EnergyReading.building_id == building_id).delete()
+    db.commit()
+    return {"status": "ok", "deleted_count": deleted}

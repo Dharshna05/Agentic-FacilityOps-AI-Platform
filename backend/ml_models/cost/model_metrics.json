@@ -1,0 +1,22 @@
+{
+  "model": "IsolationForest",
+  "n_estimators": 300,
+  "contamination": 0.08,
+  "n_records": 309,
+  "n_flagged": 25,
+  "pct_flagged": 8.1,
+  "flagged_total_value_inr": 1368123998.63,
+  "top_flagged_categories": {
+    "General Civil Works": 10,
+    "Security Operations (derived)": 6,
+    "Occupancy Operations (derived)": 3
+  },
+  "agreement_with_lof_pct": 92.2,
+  "note": "Trained on REAL BBMP (Bengaluru) tender data plus logically-derived cross-agent operating cost (see build_cost_dataset.py). No labeled ground truth exists for real invoices, so this reports unsupervised separation diagnostics, not precision/recall. 'Flagged' means statistically unusual for its category/vendor pattern \u2014 a lead for review, not a confirmed error.",
+  "training_distribution": {
+    "log_amount_inr": {
+      "mean": 12.464,
+      "std": 2.44
+    }
+  }
+}

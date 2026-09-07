@@ -1,407 +1,607 @@
 {
-  "model": "gradient_boosting",
-  "r2": 0.747,
+  "model": "ensemble_blend",
+  "r2": 0.825,
   "unit": "cycles (operating days)",
   "points": [
     {
       "actual": 112.0,
-      "predicted": 123.3
+      "predicted": 122.3,
+      "lower": 119.8,
+      "upper": 125.0
     },
     {
       "actual": 98.0,
-      "predicted": 118.6
+      "predicted": 117.0,
+      "lower": 104.1,
+      "upper": 125.0
     },
     {
       "actual": 69.0,
-      "predicted": 58.4
+      "predicted": 56.8,
+      "lower": 34.5,
+      "upper": 96.2
     },
     {
       "actual": 82.0,
-      "predicted": 73.9
+      "predicted": 86.2,
+      "lower": 57.5,
+      "upper": 115.2
     },
     {
       "actual": 91.0,
-      "predicted": 93.4
+      "predicted": 99.9,
+      "lower": 66.5,
+      "upper": 125.0
     },
     {
       "actual": 93.0,
-      "predicted": 83.8
+      "predicted": 90.9,
+      "lower": 61.2,
+      "upper": 122.5
     },
     {
       "actual": 91.0,
-      "predicted": 92.4
+      "predicted": 96.4,
+      "lower": 67.9,
+      "upper": 125.0
     },
     {
       "actual": 95.0,
-      "predicted": 66.5
+      "predicted": 81.8,
+      "lower": 61.3,
+      "upper": 109.5
     },
     {
       "actual": 111.0,
-      "predicted": 118.1
+      "predicted": 114.1,
+      "lower": 100.0,
+      "upper": 125.0
     },
     {
       "actual": 96.0,
-      "predicted": 102.3
+      "predicted": 89.6,
+      "lower": 55.6,
+      "upper": 123.3
     },
     {
       "actual": 97.0,
-      "predicted": 104.1
+      "predicted": 115.8,
+      "lower": 75.2,
+      "upper": 125.0
     },
     {
       "actual": 124.0,
-      "predicted": 101.0
+      "predicted": 101.6,
+      "lower": 66.0,
+      "upper": 125.0
     },
     {
       "actual": 95.0,
-      "predicted": 92.8
+      "predicted": 94.1,
+      "lower": 51.1,
+      "upper": 115.4
     },
     {
       "actual": 107.0,
-      "predicted": 122.2
+      "predicted": 123.6,
+      "lower": 111.1,
+      "upper": 125.0
     },
     {
       "actual": 83.0,
-      "predicted": 111.0
+      "predicted": 108.7,
+      "lower": 75.3,
+      "upper": 125.0
     },
     {
       "actual": 84.0,
-      "predicted": 100.1
+      "predicted": 100.1,
+      "lower": 78.2,
+      "upper": 125.0
     },
     {
       "actual": 50.0,
-      "predicted": 72.6
+      "predicted": 77.7,
+      "lower": 47.7,
+      "upper": 125.0
     },
     {
       "actual": 28.0,
-      "predicted": 57.9
+      "predicted": 34.6,
+      "lower": 28.8,
+      "upper": 74.5
     },
     {
       "actual": 87.0,
-      "predicted": 83.1
+      "predicted": 59.7,
+      "lower": 46.2,
+      "upper": 115.4
     },
     {
       "actual": 16.0,
-      "predicted": 11.9
+      "predicted": 10.4,
+      "lower": 8.8,
+      "upper": 18.2
     },
     {
       "actual": 57.0,
-      "predicted": 89.4
+      "predicted": 86.6,
+      "lower": 65.1,
+      "upper": 125.0
     },
     {
       "actual": 111.0,
-      "predicted": 121.5
+      "predicted": 125.0,
+      "lower": 121.3,
+      "upper": 125.0
     },
     {
       "actual": 113.0,
-      "predicted": 114.0
+      "predicted": 111.0,
+      "lower": 86.9,
+      "upper": 125.0
     },
     {
       "actual": 20.0,
-      "predicted": 42.6
+      "predicted": 36.2,
+      "lower": 26.1,
+      "upper": 88.3
     },
     {
       "actual": 125.0,
-      "predicted": 120.9
+      "predicted": 118.1,
+      "lower": 103.8,
+      "upper": 125.0
     },
     {
       "actual": 119.0,
-      "predicted": 112.4
+      "predicted": 111.3,
+      "lower": 79.2,
+      "upper": 125.0
     },
     {
       "actual": 66.0,
-      "predicted": 90.0
+      "predicted": 94.6,
+      "lower": 60.3,
+      "upper": 125.0
     },
     {
       "actual": 97.0,
-      "predicted": 75.8
+      "predicted": 77.1,
+      "lower": 50.7,
+      "upper": 113.4
     },
     {
       "actual": 90.0,
-      "predicted": 105.0
+      "predicted": 107.7,
+      "lower": 62.8,
+      "upper": 125.0
     },
     {
       "actual": 115.0,
-      "predicted": 64.9
+      "predicted": 72.8,
+      "lower": 57.7,
+      "upper": 103.3
     },
     {
       "actual": 8.0,
-      "predicted": 13.1
+      "predicted": 14.9,
+      "lower": 10.2,
+      "upper": 22.0
     },
     {
       "actual": 48.0,
-      "predicted": 76.4
+      "predicted": 68.1,
+      "lower": 54.8,
+      "upper": 117.0
     },
     {
       "actual": 106.0,
-      "predicted": 120.1
+      "predicted": 119.3,
+      "lower": 91.2,
+      "upper": 125.0
     },
     {
       "actual": 7.0,
-      "predicted": 7.9
+      "predicted": 6.1,
+      "lower": 1.6,
+      "upper": 12.3
     },
     {
       "actual": 11.0,
-      "predicted": 4.1
+      "predicted": 9.1,
+      "lower": 3.4,
+      "upper": 13.3
     },
     {
       "actual": 19.0,
-      "predicted": 18.4
+      "predicted": 19.9,
+      "lower": 14.3,
+      "upper": 30.0
     },
     {
       "actual": 21.0,
-      "predicted": 45.2
+      "predicted": 24.4,
+      "lower": 19.5,
+      "upper": 54.1
     },
     {
       "actual": 50.0,
-      "predicted": 47.5
+      "predicted": 52.2,
+      "lower": 30.6,
+      "upper": 55.2
     },
     {
       "actual": 125.0,
-      "predicted": 125.4
+      "predicted": 124.2,
+      "lower": 118.8,
+      "upper": 125.0
     },
     {
       "actual": 28.0,
-      "predicted": 25.6
+      "predicted": 34.5,
+      "lower": 22.3,
+      "upper": 49.4
     },
     {
       "actual": 18.0,
-      "predicted": 51.4
+      "predicted": 25.4,
+      "lower": 21.5,
+      "upper": 46.7
     },
     {
       "actual": 10.0,
-      "predicted": 20.4
+      "predicted": 14.2,
+      "lower": 10.5,
+      "upper": 18.6
     },
     {
       "actual": 59.0,
-      "predicted": 54.5
+      "predicted": 47.0,
+      "lower": 32.0,
+      "upper": 101.5
     },
     {
       "actual": 109.0,
-      "predicted": 115.6
+      "predicted": 109.5,
+      "lower": 91.7,
+      "upper": 123.0
     },
     {
       "actual": 114.0,
-      "predicted": 53.6
+      "predicted": 67.3,
+      "lower": 43.3,
+      "upper": 103.7
     },
     {
       "actual": 47.0,
-      "predicted": 51.1
+      "predicted": 61.0,
+      "lower": 38.8,
+      "upper": 92.7
     },
     {
       "actual": 125.0,
-      "predicted": 109.9
+      "predicted": 112.5,
+      "lower": 82.6,
+      "upper": 125.0
     },
     {
       "actual": 92.0,
-      "predicted": 105.7
+      "predicted": 97.5,
+      "lower": 60.7,
+      "upper": 121.3
     },
     {
       "actual": 21.0,
-      "predicted": 23.6
+      "predicted": 16.7,
+      "lower": 10.5,
+      "upper": 26.8
     },
     {
       "actual": 79.0,
-      "predicted": 109.9
+      "predicted": 91.6,
+      "lower": 69.5,
+      "upper": 117.0
     },
     {
       "actual": 114.0,
-      "predicted": 69.7
+      "predicted": 78.2,
+      "lower": 45.2,
+      "upper": 125.0
     },
     {
       "actual": 29.0,
-      "predicted": 66.6
+      "predicted": 38.4,
+      "lower": 31.2,
+      "upper": 93.0
     },
     {
       "actual": 26.0,
-      "predicted": 40.2
+      "predicted": 23.5,
+      "lower": 22.1,
+      "upper": 60.6
     },
     {
       "actual": 97.0,
-      "predicted": 108.5
+      "predicted": 113.5,
+      "lower": 88.4,
+      "upper": 125.0
     },
     {
       "actual": 125.0,
-      "predicted": 96.0
+      "predicted": 94.5,
+      "lower": 65.1,
+      "upper": 125.0
     },
     {
       "actual": 15.0,
-      "predicted": 12.3
+      "predicted": 11.7,
+      "lower": 9.6,
+      "upper": 18.9
     },
     {
       "actual": 103.0,
-      "predicted": 69.9
+      "predicted": 75.9,
+      "lower": 60.0,
+      "upper": 105.2
     },
     {
       "actual": 37.0,
-      "predicted": 38.3
+      "predicted": 38.6,
+      "lower": 23.1,
+      "upper": 60.4
     },
     {
       "actual": 114.0,
-      "predicted": 112.2
+      "predicted": 108.6,
+      "lower": 74.1,
+      "upper": 125.0
     },
     {
       "actual": 100.0,
-      "predicted": 82.4
+      "predicted": 102.1,
+      "lower": 65.3,
+      "upper": 125.0
     },
     {
       "actual": 21.0,
-      "predicted": 35.6
+      "predicted": 27.3,
+      "lower": 19.9,
+      "upper": 54.2
     },
     {
       "actual": 54.0,
-      "predicted": 84.0
+      "predicted": 69.9,
+      "lower": 46.5,
+      "upper": 104.9
     },
     {
       "actual": 72.0,
-      "predicted": 46.0
+      "predicted": 62.3,
+      "lower": 38.5,
+      "upper": 90.6
     },
     {
       "actual": 28.0,
-      "predicted": 39.4
+      "predicted": 26.9,
+      "lower": 20.9,
+      "upper": 36.5
     },
     {
       "actual": 125.0,
-      "predicted": 118.9
+      "predicted": 121.6,
+      "lower": 104.0,
+      "upper": 125.0
     },
     {
       "actual": 14.0,
-      "predicted": 21.5
+      "predicted": 24.9,
+      "lower": 16.0,
+      "upper": 42.2
     },
     {
       "actual": 77.0,
-      "predicted": 114.3
+      "predicted": 116.9,
+      "lower": 88.6,
+      "upper": 125.0
     },
     {
       "actual": 8.0,
-      "predicted": 11.5
+      "predicted": 9.5,
+      "lower": 7.1,
+      "upper": 21.5
     },
     {
       "actual": 121.0,
-      "predicted": 118.6
+      "predicted": 118.9,
+      "lower": 95.9,
+      "upper": 125.0
     },
     {
       "actual": 94.0,
-      "predicted": 71.2
+      "predicted": 63.6,
+      "lower": 45.3,
+      "upper": 112.3
     },
     {
       "actual": 118.0,
-      "predicted": 115.4
+      "predicted": 113.0,
+      "lower": 90.7,
+      "upper": 125.0
     },
     {
       "actual": 50.0,
-      "predicted": 80.1
+      "predicted": 68.9,
+      "lower": 47.5,
+      "upper": 123.5
     },
     {
       "actual": 125.0,
-      "predicted": 101.1
+      "predicted": 105.0,
+      "lower": 74.0,
+      "upper": 125.0
     },
     {
       "actual": 125.0,
-      "predicted": 67.6
+      "predicted": 82.3,
+      "lower": 56.3,
+      "upper": 121.7
     },
     {
       "actual": 113.0,
-      "predicted": 103.5
+      "predicted": 95.7,
+      "lower": 63.7,
+      "upper": 117.0
     },
     {
       "actual": 10.0,
-      "predicted": 9.4
+      "predicted": 9.4,
+      "lower": 5.6,
+      "upper": 17.4
     },
     {
       "actual": 34.0,
-      "predicted": 46.3
+      "predicted": 50.7,
+      "lower": 35.6,
+      "upper": 78.9
     },
     {
       "actual": 107.0,
-      "predicted": 120.1
+      "predicted": 120.6,
+      "lower": 119.2,
+      "upper": 125.0
     },
     {
       "actual": 63.0,
-      "predicted": 87.6
+      "predicted": 85.4,
+      "lower": 67.7,
+      "upper": 125.0
     },
     {
       "actual": 90.0,
-      "predicted": 76.1
+      "predicted": 88.7,
+      "lower": 56.8,
+      "upper": 122.5
     },
     {
       "actual": 8.0,
-      "predicted": 7.2
+      "predicted": 11.1,
+      "lower": 7.4,
+      "upper": 14.5
     },
     {
       "actual": 9.0,
-      "predicted": 4.0
+      "predicted": 3.7,
+      "lower": 2.3,
+      "upper": 10.9
     },
     {
       "actual": 125.0,
-      "predicted": 109.7
+      "predicted": 105.7,
+      "lower": 75.0,
+      "upper": 125.0
     },
     {
       "actual": 58.0,
-      "predicted": 53.7
+      "predicted": 58.1,
+      "lower": 42.5,
+      "upper": 96.9
     },
     {
       "actual": 118.0,
-      "predicted": 120.9
+      "predicted": 121.2,
+      "lower": 120.3,
+      "upper": 125.0
     },
     {
       "actual": 89.0,
-      "predicted": 84.4
+      "predicted": 91.8,
+      "lower": 60.9,
+      "upper": 125.0
     },
     {
       "actual": 116.0,
-      "predicted": 119.4
+      "predicted": 117.7,
+      "lower": 99.7,
+      "upper": 125.0
     },
     {
       "actual": 115.0,
-      "predicted": 118.4
+      "predicted": 120.7,
+      "lower": 94.2,
+      "upper": 125.0
     },
     {
       "actual": 125.0,
-      "predicted": 79.2
+      "predicted": 88.6,
+      "lower": 56.6,
+      "upper": 125.0
     },
     {
       "actual": 28.0,
-      "predicted": 26.6
+      "predicted": 28.1,
+      "lower": 13.1,
+      "upper": 24.9
     },
     {
       "actual": 38.0,
-      "predicted": 19.6
+      "predicted": 22.9,
+      "lower": 16.8,
+      "upper": 30.8
     },
     {
       "actual": 20.0,
-      "predicted": 18.4
+      "predicted": 24.8,
+      "lower": 17.8,
+      "upper": 26.5
     },
     {
       "actual": 85.0,
-      "predicted": 36.1
+      "predicted": 44.3,
+      "lower": 25.6,
+      "upper": 65.1
     },
     {
       "actual": 55.0,
-      "predicted": 48.7
+      "predicted": 59.6,
+      "lower": 36.9,
+      "upper": 80.6
     },
     {
       "actual": 125.0,
-      "predicted": 101.9
+      "predicted": 95.5,
+      "lower": 64.1,
+      "upper": 125.0
     },
     {
       "actual": 125.0,
-      "predicted": 115.9
+      "predicted": 115.3,
+      "lower": 79.0,
+      "upper": 125.0
     },
     {
       "actual": 82.0,
-      "predicted": 91.8
+      "predicted": 83.9,
+      "lower": 64.2,
+      "upper": 125.0
     },
     {
       "actual": 59.0,
-      "predicted": 60.6
+      "predicted": 66.6,
+      "lower": 49.9,
+      "upper": 113.9
     },
     {
       "actual": 117.0,
-      "predicted": 120.2
+      "predicted": 121.3,
+      "lower": 117.2,
+      "upper": 125.0
     },
     {
       "actual": 20.0,
-      "predicted": 37.3
+      "predicted": 27.0,
+      "lower": 20.7,
+      "upper": 73.4
     }
   ]
 }

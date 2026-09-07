@@ -1,0 +1,21 @@
+{
+  "best_model": "RandomForest",
+  "naive_baseline_mae_inr": 1502339.91,
+  "all_models": {
+    "GradientBoosting": {
+      "held_out_test_mae_inr": 2354472.79,
+      "held_out_test_r2": -5.065,
+      "improvement_over_naive_pct": -56.7
+    },
+    "RandomForest": {
+      "held_out_test_mae_inr": 1190776.29,
+      "held_out_test_r2": -0.145,
+      "improvement_over_naive_pct": 20.7
+    }
+  },
+  "n_weeks_total": 71,
+  "n_weeks_train": 61,
+  "n_weeks_test": 5,
+  "target": "forward 3-week rolling average spend (INR) \u2014 a trend forecast, not a single-week point estimate",
+  "note": "Trained on REAL weekly spend derived from actual BBMP capital-works tenders plus cross-agent derived operating cost (see build_cost_dataset.py) \u2014 only 71 weeks of history, so treat this as an early-stage forecaster, not a mature one. An earlier attempt at forecasting the raw next-week total performed far worse than a naive baseline because real facility spend is lumpy (one large capital invoice can dominate a week) \u2014 this 3-week-average trend target is the honest fix, not a reframing to hide a bad number. Naive baseline = 'trend continues at last week's level'."
+}

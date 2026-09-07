@@ -1,0 +1,25 @@
+vendor_id,vendor_name,primary_category,order_count,total_spend_inr,source
+AUTH-BBMP-CE-RRNAGAR,BBMP-CE-RRNAGAR,General Civil Works,2,1399989.0,bbmp_capital_works
+AUTH-BBMP-CORPORATION-OFF,BBMP-Corporation-Off,Facility Support Services,2,3450000.0,bbmp_capital_works
+AUTH-BBMP-EE-BNG-SOUTH,BBMP-EE-BNG SOUTH,Water Supply & Sewage,4,15045643.0,bbmp_capital_works
+AUTH-BBMP-EE-BTMLAYOUT,BBMP-EE-BTMLAYOUT,General Civil Works,4,4753470.0,bbmp_capital_works
+AUTH-BBMP-EE-CHAMARAJPETH,BBMP-EE-Chamarajpeth,General Civil Works,5,10669030.0,bbmp_capital_works
+AUTH-BBMP-EE-CHIKPETH,BBMP-EE-Chikpeth,General Civil Works,2,5377451.0,bbmp_capital_works
+AUTH-BBMP-EE-CVRAMANNAGAR,BBMP-EE-CVRAMANNAGAR,General Civil Works,4,5289927.0,bbmp_capital_works
+AUTH-BBMP-EE-ELEC-BOMMANAHALLI,BBMP-EE-ELEC-BOMMANAHALLI,Electrical Infrastructure,4,4749364.0,bbmp_capital_works
+AUTH-BBMP-EE-ELEC-MAHADEVAPURA,BBMP-EE-ELEC-MAHADEVAPURA,Electrical Infrastructure,2,3898460.0,bbmp_capital_works
+AUTH-BBMP-EE-ELEC-SOUTH,BBMP-EE-ELEC-SOUTH,Electrical Infrastructure,5,11125075.0,bbmp_capital_works
+AUTH-BBMP-EE-GANDHINAGAR,BBMP-EE-GANDHINAGAR,General Civil Works,2,207255534.0,bbmp_capital_works
+AUTH-BBMP-EE-GVND,BBMP_EE_GVND,General Civil Works,2,659905868.0,bbmp_capital_works
+AUTH-BBMP-EE-HEBBALA-EAST-ZN,BBMP-EE-HEBBALA-EAST-ZN,Water Supply & Sewage,2,2559297.0,bbmp_capital_works
+AUTH-BBMP-EE-KRPURAM,BBMP-EE-KRPURAM,General Civil Works,16,104048697.0,bbmp_capital_works
+AUTH-BBMP-EE-MAHADEVAPURA,BBMP-EE-MAHADEVAPURA,General Civil Works,27,57744605.0,bbmp_capital_works
+AUTH-BBMP-EE-MALLESHWARAM,BBMP-EE-MALLESHWARAM,General Civil Works,2,189910844.0,bbmp_capital_works
+AUTH-BBMP-EE-MR-SOUTH,BBMP-EE-MR-SOUTH,Bridges & Culverts,1,188700000.0,bbmp_capital_works
+AUTH-BBMP-EE-PDMBNGR,BBMP-EE-PDMBNGR,General Civil Works,4,8902725.0,bbmp_capital_works
+AUTH-BBMP-EE-PROJECT-WEST,BBMP-EE-PROJECT-WEST,Buildings & Civil Works,5,103841892.0,bbmp_capital_works
+AUTH-BBMP-EE-SARVAGNANAGAR,BBMP-EE-SARVAGNANAGAR,Bridges & Culverts,2,3997980.0,bbmp_capital_works
+INTERNAL-ENERGY,"Energy Operations (Internal, derived)",Energy Operations (derived),53,72872655.48,derived_cross_agent
+INTERNAL-MAINTENANCE,"Maintenance Operations (Internal, derived)",Maintenance Operations (derived),100,4935287.93,derived_cross_agent
+INTERNAL-OCCUPANCY,"Occupancy Operations (Internal, derived)",Occupancy Operations (derived),32,706473.0,derived_cross_agent
+INTERNAL-SECURITY,"Security Operations (Internal, derived)",Security Operations (derived),27,6463600.0,derived_cross_agent

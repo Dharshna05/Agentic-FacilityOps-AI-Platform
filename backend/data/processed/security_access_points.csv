@@ -1,0 +1,8 @@
+access_point_id,name,zone_id,risk_level
+AP-01,Main Entrance,ZN-06,low
+AP-02,Open Office Floor 1 Door,ZN-01,low
+AP-03,Open Office Floor 2 Door,ZN-02,low
+AP-04,Server Room Door,ZN-07,high
+AP-05,Executive Wing Door,ZN-08,medium
+AP-06,Loading Dock,,medium
+AP-07,Emergency Exit - East,,medium

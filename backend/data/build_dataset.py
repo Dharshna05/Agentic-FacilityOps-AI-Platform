@@ -12,7 +12,7 @@ Combines THREE real, public datasets onto one 15-minute timeline:
 
 Each source's real shape/cycles/noise is preserved; they're stitched onto a
 shared timeline since the three don't share an actual overlapping recording
-period (documented in README.md). The power signal is then split into
+period (documented in PROJECT_GUIDE.md). The power signal is then split into
 HVAC/Lighting/Plug-load/Other submeters using standard commercial building
 load-share ratios.
 
@@ -21,7 +21,7 @@ this script is run), not a fixed past date — so the dataset always reads as
 current/recent rather than visibly stale. Re-run this script periodically
 (or on deploy) to keep the data looking live. This is a labeling choice, not
 a claim that the underlying source recordings themselves are from today —
-that provenance is documented in README.md and stays accurate regardless of
+that provenance is documented in PROJECT_GUIDE.md and stays accurate regardless of
 what date range the labels are shifted to.
 """
 from pathlib import Path

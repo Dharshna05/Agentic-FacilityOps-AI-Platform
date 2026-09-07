@@ -4,39 +4,148 @@
     "strategy": "predict training-set mean clipped RUL for every asset",
     "mae_cycles": 34.83
   },
-  "best_model": "gradient_boosting",
-  "improvement_over_naive_pct": 57.5,
+  "best_model": "ensemble_blend",
+  "cv_tuning": {
+    "method": "RandomizedSearchCV, GroupKFold(4) on asset_id, training set only",
+    "cv_mae_cycles": 10.84,
+    "best_params": {
+      "l2_regularization": 0.4275,
+      "learning_rate": 0.0246,
+      "max_depth": 7,
+      "max_iter": 328,
+      "max_leaf_nodes": 46,
+      "min_samples_leaf": 48
+    }
+  },
+  "improvement_over_naive_pct": 64.7,
   "all_models": {
     "linear_regression": {
-      "held_out_test_mae_cycles": 17.79,
-      "held_out_test_r2": 0.691
+      "held_out_test_mae_cycles": 14.54,
+      "held_out_test_r2": 0.798
     },
     "random_forest": {
-      "held_out_test_mae_cycles": 15.17,
-      "held_out_test_r2": 0.737
+      "held_out_test_mae_cycles": 13.73,
+      "held_out_test_r2": 0.799
     },
     "gradient_boosting": {
-      "held_out_test_mae_cycles": 14.81,
-      "held_out_test_r2": 0.747
+      "held_out_test_mae_cycles": 12.62,
+      "held_out_test_r2": 0.822
+    },
+    "hist_gradient_boosting": {
+      "held_out_test_mae_cycles": 12.43,
+      "held_out_test_r2": 0.824
+    },
+    "ensemble_blend": {
+      "held_out_test_mae_cycles": 12.31,
+      "held_out_test_r2": 0.825
+    },
+    "lstm_deep_learning": {
+      "held_out_test_mae_cycles": 10.44,
+      "held_out_test_r2": 0.871,
+      "architecture": "LSTM(64)->Dropout->LSTM(32)->Dropout->Dense(16)->Dense(1)",
+      "sequence_length": 40,
+      "epochs_trained": 17,
+      "training_sequences": 14254
     }
   },
   "feature_importances_best_model": {
-    "vibration_index_roll_mean5": 0.5007,
-    "efficiency_ratio_roll_mean5": 0.2887,
-    "cycle": 0.1615,
-    "temp_stage3_c": 0.028,
-    "temp_stage2_c": 0.005,
+    "vibration_index_ema5": 0.2981,
+    "efficiency_ratio_ema5": 0.1663,
+    "efficiency_ratio_roll_mean5": 0.1523,
+    "cycle": 0.1522,
+    "vibration_index_roll_mean5": 0.1363,
+    "vibration_index_roll_std35": 0.0299,
+    "temp_stage3_c": 0.0219,
+    "vibration_index_roll_mean35": 0.0119,
+    "efficiency_ratio_roll_mean35": 0.0068,
+    "efficiency_ratio_roll_std35": 0.006,
     "temp_stage1_c": 0.0049,
-    "bleed_load": 0.0043,
-    "vibration_index": 0.0019,
-    "pressure_kpa": 0.0015,
-    "flow_rate": 0.0013,
-    "vibration_index_roll_std5": 0.0009,
-    "efficiency_ratio": 0.0007,
-    "efficiency_ratio_roll_std5": 0.0007
+    "bleed_load": 0.0036,
+    "temp_stage2_c": 0.0035,
+    "pressure_kpa": 0.0027,
+    "flow_rate": 0.0009,
+    "vibration_index_roll_std5": 0.0008,
+    "efficiency_ratio_roll_std5": 0.0005,
+    "efficiency_ratio_delta5": 0.0004,
+    "vibration_index_delta5": 0.0003,
+    "co_degradation_score": 0.0003,
+    "efficiency_ratio": 0.0002,
+    "vibration_index": 0.0001,
+    "vibration_efficiency_ratio": 0.0
   },
+  "prediction_interval": {
+    "nominal_coverage_pct": 80,
+    "empirical_coverage_pct": 74.0,
+    "mean_interval_width_cycles": 40.9,
+    "note": "p10-p90 band from quantile HistGradientBoosting models trained independently of the point-prediction model. Empirical coverage is the honest check: % of held-out true RUL values that actually fell inside the predicted band (target ~80%)."
+  },
+  "feature_cols": [
+    "cycle",
+    "temp_stage1_c",
+    "temp_stage2_c",
+    "temp_stage3_c",
+    "pressure_kpa",
+    "vibration_index",
+    "flow_rate",
+    "efficiency_ratio",
+    "bleed_load",
+    "efficiency_ratio_roll_mean5",
+    "efficiency_ratio_roll_mean35",
+    "vibration_index_roll_mean5",
+    "vibration_index_roll_mean35",
+    "efficiency_ratio_roll_std5",
+    "efficiency_ratio_roll_std35",
+    "vibration_index_roll_std5",
+    "vibration_index_roll_std35",
+    "efficiency_ratio_ema5",
+    "vibration_index_ema5",
+    "efficiency_ratio_delta5",
+    "vibration_index_delta5",
+    "vibration_efficiency_ratio",
+    "co_degradation_score"
+  ],
   "n_train_rows": 20631,
   "n_train_engines": 100,
   "n_test_engines_held_out": 100,
-  "note": "Held-out test set is NASA's official test_FD001 + RUL_FD001 answer key \u2014 engines never seen during training, each truncated mid-life. Reported as-is."
+  "note": "Held-out test set is NASA's official test_FD001 + RUL_FD001 answer key \u2014 engines never seen during training, each truncated mid-life. Reported as-is. ensemble_blend (when selected as best_model) is a real deployed AveragingEnsemble over the tuned hist_gradient_boosting and gradient_boosting models, not a one-off printout number.",
+  "live_model": "lstm_deep_learning",
+  "lstm_vs_tree_comparison": {
+    "lstm_mae_cycles": 10.44,
+    "tree_mae_cycles": 12.31,
+    "lstm_wins": true
+  },
+  "training_distribution": {
+    "temp_stage1_c": {
+      "mean": 642.681,
+      "std": 0.5
+    },
+    "temp_stage2_c": {
+      "mean": 1590.523,
+      "std": 6.131
+    },
+    "temp_stage3_c": {
+      "mean": 1408.934,
+      "std": 9.001
+    },
+    "pressure_kpa": {
+      "mean": 553.368,
+      "std": 0.885
+    },
+    "vibration_index": {
+      "mean": 47.541,
+      "std": 0.267
+    },
+    "flow_rate": {
+      "mean": 521.413,
+      "std": 0.738
+    },
+    "efficiency_ratio": {
+      "mean": 8.442,
+      "std": 0.038
+    },
+    "bleed_load": {
+      "mean": 23.29,
+      "std": 0.108
+    }
+  }
 }

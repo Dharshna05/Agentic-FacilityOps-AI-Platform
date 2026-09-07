@@ -1,0 +1,10 @@
+{
+  "model": "LocalOutlierFactor",
+  "n_neighbors": 15,
+  "contamination": 0.08,
+  "n_flagged": 25,
+  "pct_flagged": 8.1,
+  "agreement_with_isolation_forest_pct": 92.2,
+  "both_models_flagged_count": 13,
+  "note": "Comparison-only detector (density-based rather than IsolationForest's partitioning approach) \u2014 not used for live scoring. Shown side-by-side so the dashboard doesn't present a single unsupervised model's opinion as ground truth."
+}

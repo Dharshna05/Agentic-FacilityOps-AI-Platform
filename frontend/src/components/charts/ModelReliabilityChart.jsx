@@ -53,8 +53,10 @@ function CustomTooltip({ active, payload, unit }) {
 
 
   const {
-    actual,
-    predicted
+    actualDisplay,
+    predictedDisplay,
+    lower,
+    upper,
   } = payload[0].payload
 
 
@@ -79,7 +81,7 @@ function CustomTooltip({ active, payload, unit }) {
       <div>
         actual:
         {' '}
-        {actual}
+        {actualDisplay}
         {' '}
         {unit}
       </div>
@@ -88,10 +90,16 @@ function CustomTooltip({ active, payload, unit }) {
       <div>
         predicted:
         {' '}
-        {predicted}
+        {predictedDisplay}
         {' '}
         {unit}
       </div>
+
+      {lower != null && upper != null && (
+        <div className="text-slate-400">
+          80% interval: {lower}–{upper} {unit}
+        </div>
+      )}
 
 
     </div>
@@ -151,34 +159,35 @@ export default function ModelReliabilityChart({
 
   const style = R2_STYLE[bucket]
 
-
+  const hasInterval = points.every(p => p.lower != null && p.upper != null)
 
   const values = points.flatMap(
-    p => [
-      p.actual,
-      p.predicted
-    ]
+    p => hasInterval ? [p.actual, p.predicted, p.lower, p.upper] : [p.actual, p.predicted]
   )
 
-
-
   const min = Math.min(...values)
-
   const max = Math.max(...values)
+  const pad = (max - min) * 0.08 || 1
+  const domain = [Math.floor(min - pad), Math.ceil(max + pad)]
 
-
-  const pad =
-    (max - min) * 0.08 || 1
-
-
-
-  const domain = [
-
-    Math.floor(min - pad),
-
-    Math.ceil(max + pad)
-
-  ]
+  // Many engines in this dataset never got close enough to failure during
+  // the test run for RUL to matter, so their true value is clipped to the
+  // same ceiling (see backend RUL_CLIP). That means dozens of points share
+  // the exact same "actual" x-position and stack into one dense vertical
+  // smear at the right edge of the chart. A tiny deterministic jitter
+  // spreads that stack out so it reads as "many healthy engines, correctly
+  // predicted" instead of a single blob.
+  const actualCeiling = Math.max(...points.map(p => p.actual))
+  const jitterSpread = (max - min) * 0.012 || 0.4
+  let ceilingIndex = 0
+  const chartPoints = points.map(p => {
+    const atCeiling = Math.abs(p.actual - actualCeiling) < 1e-6
+    const predictedAtCeiling = atCeiling && Math.abs(p.predicted - actualCeiling) < 2
+    const jitterX = atCeiling ? ((ceilingIndex % 9) - 4) * jitterSpread : 0
+    const jitterY = predictedAtCeiling ? (((ceilingIndex + 3) % 7) - 3) * jitterSpread : 0
+    if (atCeiling) ceilingIndex += 1
+    return { ...p, actualDisplay: p.actual, predictedDisplay: p.predicted, actual: p.actual + jitterX, predicted: p.predicted + jitterY }
+  })
 
 
 
@@ -485,11 +494,13 @@ export default function ModelReliabilityChart({
 
           <Scatter
 
-          data={points}
+          data={chartPoints}
 
           fill={style.color}
 
-          fillOpacity={0.65}
+          fillOpacity={0.55}
+
+          r={4}
 
           />
 
@@ -523,6 +534,17 @@ export default function ModelReliabilityChart({
 
       ● Scattered points =
       higher prediction error
+
+      <br/>
+
+      ● Cluster near the top-right = healthy engines correctly predicted near the RUL ceiling (spread slightly apart so overlapping points stay visible)
+
+      {hasInterval && (
+        <>
+          <br/>
+          ● Hover any point for its 80% prediction interval (p10–p90)
+        </>
+      )}
 
       </div>
 

@@ -12,7 +12,9 @@ instead of implying uniform accuracy across all of them.
 import json
 from pathlib import Path
 import joblib
+import numpy as np
 import pandas as pd
+from app.utils.drift_detection import compute_drift
 
 MODEL_DIR = Path(__file__).resolve().parents[2] / "ml_models" / "energy"
 METRICS_PATH = MODEL_DIR / "model_metrics.json"
@@ -88,6 +90,47 @@ def get_horizon_confidence(horizon: str) -> dict:
     }
 
 
+def get_model_comparison(horizon: str) -> dict:
+    """All 3 candidate models' honest held-out metrics for this horizon,
+    not just the winner — surfaces the same multi-model comparison that
+    training already does (linear_regression / random_forest /
+    gradient_boosting) so the dashboard can show it, not just silently
+    pick a winner behind the scenes."""
+    if not METRICS_PATH.exists():
+        return {"available": False}
+    metrics = json.loads(METRICS_PATH.read_text())
+    horizon_data = metrics.get("horizons", {}).get(horizon)
+    if not horizon_data:
+        return {"available": False}
+    return {
+        "available": True,
+        "horizon": horizon,
+        "best_model": horizon_data["best_model"],
+        "models": horizon_data["all_models"],
+        "naive_flat_mae_kwh": horizon_data["naive_flat_mae_kwh"],
+        "naive_daily_mae_kwh": horizon_data["naive_daily_mae_kwh"],
+    }
+
+
+def get_data_drift(df: pd.DataFrame) -> dict:
+    """Compares the CURRENT data (bundled dataset, or an uploaded test
+    CSV) against the distribution the model was originally TRAINED on —
+    see app/utils/drift_detection.py for what this proxy does and doesn't
+    tell you."""
+    if not METRICS_PATH.exists():
+        return {"available": False}
+    metrics = json.loads(METRICS_PATH.read_text())
+    training_dist = metrics.get("training_distribution")
+    if not training_dist:
+        return {"available": False}
+
+    current_means = {
+        col: float(df[col].mean()) if col in df.columns and not df[col].dropna().empty else None
+        for col in training_dist
+    }
+    return compute_drift(current_means, training_dist)
+
+
 def forecast(df: pd.DataFrame, horizon: str = "1h") -> dict:
     """Predicts total_kwh `horizon` ahead using the model trained for that
     specific horizon."""
@@ -97,7 +140,10 @@ def forecast(df: pd.DataFrame, horizon: str = "1h") -> dict:
     bundle = _load_model(horizon)
     model, features, horizon_steps = bundle["model"], bundle["features"], bundle["horizon_steps"]
 
-    required_history = max(16, 24 * 4) + 1  # 4h rolling window + 24h-ago lookup
+    # 24h window is nice-to-have (falls back to whatever history exists);
+    # the 7-day-ago weekly lookup is likewise best-effort. Only the 4h
+    # rolling window is strictly required to produce a prediction at all.
+    required_history = 16 + 1  # 4h rolling window, minimum
     if len(df) < required_history:
         raise ValueError(f"Need at least {required_history} readings of history to forecast")
 
@@ -106,25 +152,51 @@ def forecast(df: pd.DataFrame, horizon: str = "1h") -> dict:
 
     latest = work.iloc[-1]
     trailing_4h = work.tail(16)
+    trailing_24h = work.tail(96) if len(work) >= 96 else work
     yesterday_same_time = work.iloc[-1 - 24 * 4] if len(work) > 24 * 4 else latest
+    last_week_same_time = work.iloc[-1 - 7 * 24 * 4] if len(work) > 7 * 24 * 4 else yesterday_same_time
+
+    hour = latest["timestamp"].hour
+    dow = latest["timestamp"].dayofweek
+    kwh_now = latest["total_kwh"]
+    kwh_roll_mean_4h = trailing_4h["total_kwh"].mean()
+
+    def _component(col):
+        # Component breakdown columns (hvac/lighting/plug/other) may be
+        # absent from a caller's DataFrame in some call sites — fall back
+        # to 0 rather than raising, since these are secondary signals.
+        return float(latest[col]) if col in work.columns else 0.0
 
     row = {
-        "hour": latest["timestamp"].hour,
-        "day_of_week": latest["timestamp"].dayofweek,
-        "is_weekend": int(latest["timestamp"].dayofweek >= 5),
+        "hour": hour,
+        "day_of_week": dow,
+        "is_weekend": int(dow >= 5),
         "month": latest["timestamp"].month,
+        "hour_sin": np.sin(2 * np.pi * hour / 24),
+        "hour_cos": np.cos(2 * np.pi * hour / 24),
+        "dow_sin": np.sin(2 * np.pi * dow / 7),
+        "dow_cos": np.cos(2 * np.pi * dow / 7),
         "outdoor_temp_c": latest.get("outdoor_temp_c", trailing_4h["outdoor_temp_c"].mean()),
         "occupancy_count": latest.get("occupancy_count", trailing_4h["occupancy_count"].mean()),
-        "kwh_now": latest["total_kwh"],
-        "kwh_rolling_mean_4h": trailing_4h["total_kwh"].mean(),
+        "kwh_now": kwh_now,
+        "kwh_rolling_mean_4h": kwh_roll_mean_4h,
         "kwh_rolling_std_4h": trailing_4h["total_kwh"].std(),
+        "kwh_rolling_mean_24h": trailing_24h["total_kwh"].mean(),
+        "kwh_rolling_std_24h": trailing_24h["total_kwh"].std(),
+        "kwh_momentum_4h": kwh_now - kwh_roll_mean_4h,
         "kwh_same_hour_yesterday": yesterday_same_time["total_kwh"],
+        "kwh_same_hour_last_week": last_week_same_time["total_kwh"],
+        "hvac_kwh_now": _component("hvac_kwh"),
+        "lighting_kwh_now": _component("lighting_kwh"),
+        "plug_load_kwh_now": _component("plug_load_kwh"),
+        "other_kwh_now": _component("other_kwh"),
     }
-    X = pd.DataFrame([row])[features]
+    X = pd.DataFrame([row])[features].fillna(0)
     prediction = float(model.predict(X)[0])
 
     forecast_time = latest["timestamp"] + pd.Timedelta(minutes=15 * horizon_steps)
     confidence = get_horizon_confidence(horizon)
+    data_drift = get_data_drift(work)
 
     return {
         "horizon": horizon,
@@ -134,6 +206,7 @@ def forecast(df: pd.DataFrame, horizon: str = "1h") -> dict:
         "predicted_timestamp": forecast_time,
         "model_used": bundle["model_name"],
         "confidence": confidence,
+        "data_drift": data_drift,
     }
 
 

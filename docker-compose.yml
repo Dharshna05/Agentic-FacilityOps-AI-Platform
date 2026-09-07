@@ -5,14 +5,43 @@ services:
       - "8000:8000"
     volumes:
       - ./backend/data:/app/data
+    # env_file, not a hardcoded `environment:` list — the previous version
+    # only ever set DATABASE_URL, meaning AI_PROVIDER/GROQ_API_KEY/
+    # GEMINI_API_KEY/JWT_SECRET_KEY/ADMIN_USERNAME/ADMIN_PASSWORD (see
+    # backend/.env) were NEVER passed into the container: it would always
+    # silently run in mock-AI mode with the default dev JWT secret no
+    # matter what backend/.env said, with no error — exactly the kind of
+    # silent-fallback bug this project has already hit once with the AI
+    # provider model names. env_file loads the whole file, and the
+    # `environment:` override below only exists to point DATABASE_URL at
+    # the container's own mounted volume path rather than the host path
+    # that's in .env for local (non-Docker) runs.
+    env_file:
+      - ./backend/.env
     environment:
       - DATABASE_URL=sqlite:///./data/facilityops.db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 25s
+      retries: 3
+    restart: unless-stopped
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        # Build-time only (see frontend/Dockerfile's comment on why this
+        # can't be a runtime `environment:` entry for a Vite app) — inside
+        # the compose network the frontend reaches the backend by service
+        # name, but a BROWSER loading this page reaches it via whatever
+        # host the person is on, so localhost is correct here even though
+        # it looks like it should be "backend".
+        VITE_API_BASE_URL: http://localhost:8000/api
     ports:
       - "5173:5173"
     depends_on:
-      - backend
-    environment:
-      - VITE_API_BASE_URL=http://localhost:8000/api
+      backend:
+        condition: service_healthy
+    restart: unless-stopped

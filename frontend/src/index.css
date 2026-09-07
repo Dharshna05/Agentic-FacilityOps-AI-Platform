@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-paper dark:bg-graphite text-ink dark:text-slate-200 font-body transition-colors duration-200;
+  @apply bg-[#f7f6f2] dark:bg-[#08090b] text-ink dark:text-slate-200 font-body transition-colors duration-200 antialiased;
 }
 
 .font-display {
@@ -12,4 +12,46 @@ body {
 
 .font-mono {
   font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+::selection {
+  @apply bg-teal-400/40 text-ink dark:text-white;
+}
+
+@layer components {
+  .surface-card {
+    @apply rounded-[1.6rem] border border-slate-200/70 bg-white shadow-[0_14px_34px_-28px_rgba(15,23,42,0.5)] backdrop-blur-sm transition-all duration-300 dark:border-white/[0.07] dark:bg-panel/90 dark:shadow-[0_14px_45px_-26px_rgba(0,0,0,0.85)];
+  }
+
+  .surface-card-interactive {
+    @apply surface-card hover:-translate-y-1 hover:border-teal-500/35 hover:shadow-[0_20px_44px_-26px_rgba(13,148,136,0.38)] dark:hover:border-teal-400/30;
+  }
+
+  /* Light mode: warm, colorful ambient wash (intelly-style) — brighter and more
+     saturated than a typical neutral SaaS background. Dark mode: near-black with
+     a faint teal-glow grid, evoking a neon-on-charcoal financial dashboard rather
+     than plain dark gray. */
+  .dashboard-page {
+    @apply relative min-h-screen overflow-hidden animate-fade-in;
+    background-image:
+      radial-gradient(circle at 94% 1%, rgba(196, 181, 253, 0.85), transparent 24rem),
+      radial-gradient(circle at 8% 12%, rgba(253, 224, 71, 0.35), transparent 26rem),
+      radial-gradient(circle at 20% 92%, rgba(134, 239, 172, 0.5), transparent 25rem),
+      radial-gradient(circle at 78% 85%, rgba(147, 197, 253, 0.45), transparent 24rem);
+  }
+  .dark .dashboard-page {
+    background-image:
+      radial-gradient(circle at 50% 0%, rgba(45, 212, 191, 0.10), transparent 30rem),
+      linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
+    background-size: auto, 42px 42px, 42px 42px;
+  }
+
+  .dashboard-content {
+    @apply relative mx-auto flex max-w-[1540px] flex-col gap-8 px-5 py-6 sm:px-7 lg:px-9 lg:py-8;
+  }
+
+  .data-pill {
+    @apply rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 font-mono text-[9px] tracking-[0.14em] text-slate-500 dark:border-white/[0.08] dark:bg-white/[0.045] dark:text-slate-400;
+  }
 }

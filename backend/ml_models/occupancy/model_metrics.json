@@ -1,0 +1,72 @@
+{
+  "naive_baseline": {
+    "strategy": "always predict majority class (0)",
+    "accuracy": 0.7567
+  },
+  "best_model": "logistic_regression",
+  "all_models": {
+    "logistic_regression": {
+      "held_out_accuracy": 0.9834,
+      "precision": 0.965,
+      "recall": 0.9669,
+      "f1": 0.9659
+    },
+    "random_forest": {
+      "held_out_accuracy": 0.9707,
+      "precision": 0.9143,
+      "recall": 0.9705,
+      "f1": 0.9416
+    },
+    "gradient_boosting": {
+      "held_out_accuracy": 0.9493,
+      "precision": 0.9496,
+      "recall": 0.8358,
+      "f1": 0.8891
+    },
+    "hist_gradient_boosting": {
+      "held_out_accuracy": 0.9406,
+      "precision": 0.8537,
+      "recall": 0.9119,
+      "f1": 0.8819
+    }
+  },
+  "feature_importances_best_model": {
+    "Light": 3.9094,
+    "CO2": 1.8967,
+    "Temperature": 1.3025,
+    "HumidityRatio": 0.2333,
+    "Humidity": 0.0266
+  },
+  "feature_cols": [
+    "Temperature",
+    "Humidity",
+    "Light",
+    "CO2",
+    "HumidityRatio"
+  ],
+  "n_train_rows": 8143,
+  "n_test_rows": 12417,
+  "note": "Held-out test = UCI's own official datatest.csv + datatest2.csv, recorded on different days than training, never used for training or feature selection.",
+  "training_distribution": {
+    "Temperature": {
+      "mean": 20.619,
+      "std": 1.017
+    },
+    "Humidity": {
+      "mean": 25.732,
+      "std": 5.531
+    },
+    "Light": {
+      "mean": 119.519,
+      "std": 194.756
+    },
+    "CO2": {
+      "mean": 606.546,
+      "std": 314.321
+    },
+    "HumidityRatio": {
+      "mean": 0.004,
+      "std": 0.001
+    }
+  }
+}

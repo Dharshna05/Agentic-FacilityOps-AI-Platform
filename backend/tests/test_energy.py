@@ -67,7 +67,10 @@ def test_forecast():
     assert "predicted_kwh" in body
     assert body["predicted_kwh"] > 0
     assert body["horizon"] == "1h"
-    assert body["model_used"] in ("linear_regression", "random_forest", "gradient_boosting")
+    assert body["model_used"] in (
+        "linear_regression", "random_forest", "gradient_boosting",
+        "hist_gradient_boosting", "ensemble_blend",
+    )
     assert body["confidence"]["available"] is True
     assert body["confidence"]["confidence"] in ("low", "medium", "high")
 
@@ -166,3 +169,63 @@ def test_xlsx_upload_with_external_columns(tmp_path):
 
     # Restore the main dataset for any tests that run after this one
     client.post("/api/energy/ingest")
+
+
+def test_upload_too_few_rows_flags_forecast_not_ready(tmp_path):
+    """A tiny upload should ingest fine but come back with a clear note
+    instead of silently leaving the forecast tab looking broken later."""
+    import pandas as pd
+    df = pd.DataFrame({
+        "timestamp": pd.date_range("2026-01-01", periods=5, freq="15min"),
+        "total_kwh": [100, 105, 98, 110, 102],
+    })
+    csv_path = tmp_path / "tiny.csv"
+    df.to_csv(csv_path, index=False)
+
+    with open(csv_path, "rb") as f:
+        r = client.post("/api/energy/ingest/upload", files={"file": ("tiny.csv", f, "text/csv")})
+    assert r.status_code == 200
+    body = r.json()
+    assert body["rows_ingested"] == 5
+    assert body["forecast_ready"] is False
+    assert "17 readings" in body["note"]
+
+    client.post("/api/energy/ingest")
+
+
+def test_forecast_flags_data_drift_on_mismatched_dataset(tmp_path):
+    """Upload a dataset whose scale is wildly different from what the
+    model was trained on — the forecast should still succeed (no crash)
+    but must say so, rather than silently reusing the original dataset's
+    accuracy/confidence numbers as if nothing had changed."""
+    import pandas as pd
+    import numpy as np
+
+    n = 500
+    df = pd.DataFrame({
+        "timestamp": pd.date_range("2025-03-01", periods=n, freq="15min"),
+        "total_kwh": 900 + 50 * np.sin(np.arange(n) / 20),  # far above the ~261 kWh training mean
+    })
+    csv_path = tmp_path / "different_building.csv"
+    df.to_csv(csv_path, index=False)
+
+    with open(csv_path, "rb") as f:
+        client.post("/api/energy/ingest/upload", files={"file": ("different_building.csv", f, "text/csv")})
+
+    r = client.get("/api/energy/forecast", params={"horizon": "1h"})
+    assert r.status_code == 200
+    drift = r.json()["data_drift"]
+    assert drift["available"] is True
+    assert drift["drift_detected"] is True
+    assert drift["level"] in ("medium", "high")
+
+    client.post("/api/energy/ingest")
+
+
+def test_forecast_no_drift_flag_on_original_dataset():
+    """Sanity check the other direction — the bundled dataset the model
+    was actually trained on should NOT trip the drift warning."""
+    client.post("/api/energy/ingest")
+    r = client.get("/api/energy/forecast", params={"horizon": "1h"})
+    assert r.status_code == 200
+    assert r.json()["data_drift"]["drift_detected"] is False

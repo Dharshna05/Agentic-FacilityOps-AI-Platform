@@ -123,3 +123,49 @@ def test_health_model_metrics_honest():
     metrics = json.loads(metrics_path.read_text())
     assert metrics["improvement_over_naive_pct"] > 0
     assert metrics["n_test_engines_held_out"] == 100
+
+
+def test_lstm_deep_learning_model_is_live_and_wins_honestly():
+    """The LSTM was compared honestly against the tree ensemble and
+    genuinely won on the SAME NASA held-out test engines — this asserts
+    that comparison is still recorded truthfully (not that LSTM always
+    "wins" by definition; if a future retrain found the tree model better,
+    this test's job is to catch model_metrics.json silently claiming LSTM
+    is live when it isn't actually better)."""
+    import json
+    from pathlib import Path
+    metrics_path = Path(__file__).resolve().parent.parent / "ml_models" / "maintenance" / "model_metrics.json"
+    metrics = json.loads(metrics_path.read_text())
+
+    assert "lstm_deep_learning" in metrics["all_models"]
+    comparison = metrics["lstm_vs_tree_comparison"]
+    assert comparison["lstm_wins"] is True
+    assert comparison["lstm_mae_cycles"] < comparison["tree_mae_cycles"]
+    assert metrics["live_model"] == "lstm_deep_learning"
+
+
+def test_asset_health_uses_lstm_and_returns_valid_prediction():
+    """End-to-end: with the LSTM live, a real asset's health prediction
+    should still come back in the same valid shape (RUL in range, a
+    prediction interval from the tree quantile models, confidence flagged
+    as deep-learning) — proves the two models are genuinely interchangeable
+    behind predict_asset_health(), not just individually testable in
+    isolation."""
+    from app.services import health_service
+    assert health_service.is_lstm_live() is True
+
+    r = client.get("/api/maintenance/fleet")
+    asset_id = r.json()["assets"][0]["asset_id"]
+
+    detail = client.get(f"/api/maintenance/assets/{asset_id}")
+    assert detail.status_code == 200
+    body = detail.json()
+    assert 0 <= body["predicted_rul_cycles"] <= 125
+    assert body["confidence"]["model_used"] == "lstm_deep_learning"
+    assert body["confidence"]["is_deep_learning"] is True
+    # Prediction interval still comes from the tree quantile models even
+    # though the LSTM made the point prediction — see health_service.py's
+    # docstring on why that's a deliberate choice, not a gap.
+    assert body["rul_lower_cycles"] is not None
+    assert body["rul_upper_cycles"] is not None
+    assert body["data_drift"]["drift_detected"] is False

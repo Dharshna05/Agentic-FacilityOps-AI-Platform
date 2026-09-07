@@ -41,11 +41,21 @@ export default {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        'float-in': {
+          '0%': { opacity: '0', transform: 'translateY(18px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'shimmer': {
+          '0%': { backgroundPosition: '-400px 0' },
+          '100%': { backgroundPosition: '400px 0' },
+        },
       },
       animation: {
         'trace-in': 'trace-in 0.4s ease-out forwards',
         'pulse-line': 'pulse-line 1.6s ease-in-out infinite',
         'fade-in': 'fade-in 0.3s ease-out',
+        'float-in': 'float-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both',
+        'shimmer': 'shimmer 1.8s linear infinite',
       },
     },
   },

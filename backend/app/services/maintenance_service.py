@@ -9,8 +9,8 @@ Two responsibilities:
 2. open_work_order() — the REAL implementation behind maintenance alerts.
    This is deliberately the single function both the Maintenance Agent's
    own tools AND the Energy Agent's flag_for_maintenance_review call, so
-   the cross-agent handoff described in ARCHITECTURE.md creates one actual
-   row in the same table regardless of which agent triggered it.
+   the Energy→Maintenance cross-agent handoff creates one actual row in the
+   same table regardless of which agent triggered it.
 """
 from datetime import datetime
 from pathlib import Path
