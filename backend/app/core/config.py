@@ -37,7 +37,7 @@ class Settings:
     CORS_ORIGINS: list = [
     "http://localhost:5173",
     "http://localhost:3000",
-    "https://YOUR-FRONTEND-URL-HERE.up.railway.app",
+    "https://remarkable-consideration-production-6fb1.up.railway.app",
 ]
     # LLM provider for the Intelligence Engine's briefing/investigation.
     # "mock" (default) works with no API key. "groq" (recommended real
