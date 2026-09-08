@@ -34,8 +34,11 @@ class Settings:
     OFF_HOURS_END: int = 6                  # 6 AM
     BASELINE_WASTE_THRESHOLD_PCT: float = 15.0  # off-hours load vs daytime avg
 
-    CORS_ORIGINS: list = ["http://localhost:5173", "http://localhost:3000"]
-
+    CORS_ORIGINS: list = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://YOUR-FRONTEND-URL-HERE.up.railway.app",
+]
     # LLM provider for the Intelligence Engine's briefing/investigation.
     # "mock" (default) works with no API key. "groq" (recommended real
     # provider — fast, generous free tier) needs GROQ_API_KEY. "gemini" is
